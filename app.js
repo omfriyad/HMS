@@ -21,23 +21,15 @@ var connection = mysql.createConnection(
     }
 );
 
-function getNextPrimaryKey(tableName,primaryKey) {
+function getNextPrimaryKey(tableName,primaryKey,getNext) {
 
-    var nextPrimaryKey = 1;
-    var res;
-
-    connection.query('SELECT '+primaryKey+' FROM ' +tableName+' ORDER BY '+primaryKey+' DESC LIMIT 1',res,function (err,result) {
-
-         nextPrimaryKey = Object.values(result[0])[0]+1;
-
-        console.log("From inside " + nextPrimaryKey);
-
+    connection.query('SELECT '+primaryKey+' FROM ' +tableName+' ORDER BY '+primaryKey+' DESC LIMIT 1',function (err,result) {
+        if(err){
+             console.log("error");
+        }else{
+            return getNext(null,Object.values(result[0])[0]+1);
+        }
     });
-    console.log("From outside " + nextPrimaryKey);
-
-    console.log(res)
-
-
 }
 
 
@@ -102,17 +94,22 @@ app.post('',function (req,res) {
 
 //medicines
 app.get('/medicines/',function (req,res) {
-    res.render('./Medicines/view');
-
+    //res.render('./Medicines/view');
+    connection.query("SELECT * FROM Medicines",function(err,result){
+        if(err){
+            console.log("medicine data error");
+        }else{
+            var a=Object.values(result);
+            res.render("./Medicines/view", {data:a} );
+        }
+    });
 });
+
 app.get('/medicines/new',function (req,res) {
-
-
-    res.render('./Medicines/new',{medC:getNextPrimaryKey("Medicines","medicineId")});
-
-
-
-
+    getNextPrimaryKey("Medicines","medicineId",function(err,result){
+        console.log("Outside "+result);
+        res.render('./Medicines/new',{medC:result});
+    });
 });
 
 app.post('/medicines',function (req,res) {

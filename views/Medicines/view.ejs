@@ -1,0 +1,21 @@
+<%include ../Extra/Partials/header.ejs%>
+
+<table>
+
+   <tr>
+    <% for (var key in data[0]) { %>
+    	<th><%=key%></th>
+	<% } %>
+   </tr>
+
+<% for(var i=0; i < data.length; i++) { %>
+   <tr>
+    <% for (var key in data[i]) { %>
+    	<td><%=data[i][key]%></td>
+	<% } %>
+   </tr>
+<% } %>
+
+</table>
+
+<%include ../Extra/Partials/footer.ejs%>
