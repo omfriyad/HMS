@@ -84,6 +84,12 @@ function  sqlInsert(tableName,data) {
 //     });
 // });
 
+/**********************************ROUTES******************************************/
+//index
+app.get('/',function (req,res) {
+   res.render('index');
+});
+
 //doctors
 app.get('',function (req,res) {
 
@@ -173,19 +179,7 @@ app.get('/signup',function (req, res) {
 });
 
 
-app.get('/',function (req,res) {
-    connection.query('SELECT * FROM Users',function (err,result) {
-        if(err)
-        {
-            console.log('db had error');
 
-        }
-        else
-        {
-            res.send(result);
-        }
-    })
-});
 
 
 
