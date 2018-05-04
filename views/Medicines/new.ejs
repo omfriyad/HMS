@@ -1,0 +1,38 @@
+<%include ../Extra/Partials/header.ejs%>
+
+<h1>Add NEW Medicine</h1>
+
+<form action="/medicines" method="post">
+    <div>
+        <label for="medicineId">Medicine ID:</label>
+        <input type="number" name="medicineId" value="<%=medC%>" placeholder="" readonly>
+    </div>
+
+    <div>
+        <label for="medicineName">Name: </label>
+        <input type="text" name="medicineName">
+    </div>
+    <div>
+        <label for="medicineType">Medicine Type</label>
+        <input type="text" name="medicineType">
+    </div>
+    <div>
+        <label for="unitPrice"> Unite Price</label>
+        <input type="number" name="unitePrice" >
+    </div>
+    <div>
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity">
+    </div>
+    <div>
+        <label for="dateOfManu">Date of Manufacture</label>
+        <input type="date" name="dateOfManu">
+    </div>
+    <div>
+        <label for="expireDate">Date of Expire</label>
+        <input type="date" name="expireDate">
+    </div>
+    <input type="submit">
+</form>
+
+<%include ../Extra/Partials/footer.ejs%>
