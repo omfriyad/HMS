@@ -40,7 +40,7 @@ function returnsComma(a,b) {
         return",";
 }
 
-function  sqlInsert(tableName,data) {
+function sqlInsert(tableName,data) {
 
     console.log(data);
     data = Object.values(data);
@@ -68,21 +68,7 @@ function  sqlInsert(tableName,data) {
 
     return sql;
 
-};
-
-// connection.query('CREATE DATABASE IF NOT EXISTS test', function (err) {
-//     if (err) throw err;
-//     connection.query('USE test', function (err) {
-//         if (err) throw err;
-//         connection.query('CREATE TABLE IF NOT EXISTS users('
-//             + 'id INT NOT NULL AUTO_INCREMENT,'
-//             + 'PRIMARY KEY(id),'
-//             + 'name VARCHAR(30)'
-//             +  ')', function (err) {
-//             if (err) throw err;
-//         });
-//     });
-// });
+}
 
 /**********************************ROUTES******************************************/
 //index
@@ -146,8 +132,9 @@ app.post('',function (req,res) {
 
 
 //patients
-app.get('',function (req,res) {
+app.get('/patients/new',function (req,res) {
 
+    res.render('./Patients/new');
 });
 app.post('',function (req,res) {
 

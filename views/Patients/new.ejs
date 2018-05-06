@@ -1,0 +1,78 @@
+<%include ../Extra/Partials/header.ejs%>
+<form action="/patients/new" method="post">
+    <div>
+        <label for="dateOfAdmission">Date of Admission:</label>
+        <input type="date" name="dateOfAdmission">
+    </div>
+    <div>
+        <label for="fName">First Name:</label>
+        <input type="text"name="fName">
+        <label for="mName">Middle Name:</label>
+        <input type="text" name="mName">
+        <label for="lName">Last Name:</label>
+        <input type="text" name="lName">
+    </div>
+    <div>
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="date" name="dateOfBirth">
+    </div>
+    <div>
+        <h3>Present Address</h3>
+        <label for="presSt">Street No./Village: </label>
+        <input type="text" name="presSt">
+        <label for="presStName">Street Name:</label>
+        <input type="text" name="presStName">
+        <label for="presArea">Area:</label>
+        <input type="text" name="presArea">
+        <label for="presThana">Thana:</label>
+        <input type="text" name="presThana">
+        <label for="presDist">District:</label>
+        <input type="text" name="presDist">
+
+    </div>
+    <div>
+
+        <h3>Permanent Address</h3>
+        <label for="" class="btn-light">Same as Present</label>
+        <br>
+        <label for="permSt">Street No./Village: </label>
+        <input type="text" name="permSt">
+        <label for="permStName">Street Name:</label>
+        <input type="text" name="permStName">
+        <label for="permArea">Area:</label>
+        <input type="text" name="permArea">
+        <label for="permThana">Thana:</label>
+        <input type="text" name="permThana">
+        <label for="permDist">District:</label>
+        <input type="text" name="permDist">
+    </div>
+    <div>
+        <label for="profession">Profession</label>
+        <select name="profession" id="">
+            <option value="Government job">Government job</option>
+            <option value="Private Job">Private Job</option>
+            <option value="Business">Business</option>
+            <option value="Farmer">Farmer</option>
+            <option value="Retired ">Retired </option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
+    <div>
+        <label for="dipoAmount">Amount Diposited: </label>
+        <input type="number">
+    </div>
+    <div>
+        <label for="cabin">Cabin/Ward:</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <br><br><br>
+        <p>Signature with date</p>
+        <label for="Name:"></label>
+        <input type="text" name="Name"><br>
+        <label for="rwtp">Relation with the Patient</label><br>
+        <input type="text" name="rwtp">
+    </div>
+</form>
+<%include ../Extra/Partials/footer.ejs%>
