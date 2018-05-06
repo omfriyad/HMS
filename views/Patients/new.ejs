@@ -1,5 +1,5 @@
 <%include ../Extra/Partials/header.ejs%>
-<form action="/patients/new" method="post">
+<form action="/patients" method="post">
     <div>
         <label for="dateOfAdmission">Date of Admission:</label>
         <input type="date" name="dateOfAdmission">
@@ -15,6 +15,12 @@
     <div>
         <label for="dateOfBirth">Date of Birth:</label>
         <input type="date" name="dateOfBirth">
+    </div>
+    <div>
+        <label for="mob1">Mobile1: </label>
+        <input type="text" name="mob1">
+        <label for="mob2">Mobile2:</label>
+        <input type="text" name="mob2">
     </div>
     <div>
         <h3>Present Address</h3>
@@ -74,5 +80,8 @@
         <label for="rwtp">Relation with the Patient</label><br>
         <input type="text" name="rwtp">
     </div>
+
+    <input type="submit" class="btn-success">
 </form>
+
 <%include ../Extra/Partials/footer.ejs%>

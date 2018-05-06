@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96d59dba-70a7-404d-afc0-7db670df88bd" name="Default" comment="push 3">
+    <list default="true" id="96d59dba-70a7-404d-afc0-7db670df88bd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Patients/investigation.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Doctors/edit.ejs" afterPath="$PROJECT_DIR$/views/Doctors/edit.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Doctors/new.ejs" afterPath="$PROJECT_DIR$/views/Doctors/new.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Doctors/view.ejs" afterPath="$PROJECT_DIR$/views/Doctors/view.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Medicines/edit.ejs" afterPath="$PROJECT_DIR$/views/Medicines/edit.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Nurses/edit.ejs" afterPath="$PROJECT_DIR$/views/Nurses/edit.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Nurses/new.ejs" afterPath="$PROJECT_DIR$/views/Nurses/new.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Nurses/view.ejs" afterPath="$PROJECT_DIR$/views/Nurses/view.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Patients/edit.ejs" afterPath="$PROJECT_DIR$/views/Patients/edit.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Patients/new.ejs" afterPath="$PROJECT_DIR$/views/Patients/new.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Patients/view.ejs" afterPath="$PROJECT_DIR$/views/Patients/view.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Wards/edit.ejs" afterPath="$PROJECT_DIR$/views/Wards/edit.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Wards/new.ejs" afterPath="$PROJECT_DIR$/views/Wards/new.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Wards/view.ejs" afterPath="$PROJECT_DIR$/views/Wards/view.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,11 +22,11 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="136" column="31" lean-forward="false" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="31" />
+            <state relative-caret-position="20">
+              <caret line="142" column="3" lean-forward="true" selection-start-line="142" selection-start-column="3" selection-end-line="142" selection-end-column="3" />
               <folding>
-                <element signature="e#2752#3128#0" expanded="false" />
-                <element signature="e#3171#3200#0" expanded="false" />
+                <element signature="e#2938#3314#0" expanded="false" />
+                <element signature="e#3357#3386#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -64,30 +53,30 @@
         </entry>
       </file>
       <file leaf-file-name="new.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/Nurses/new.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/Nurses/view.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/Patients/new.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="69" column="20" lean-forward="false" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+            <state relative-caret-position="15">
+              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/Patients/edit.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="investigation.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/Patients/investigation.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -171,9 +160,10 @@
         <option value="$PROJECT_DIR$/views/Wards/edit.ejs" />
         <option value="$PROJECT_DIR$/views/Wards/new.ejs" />
         <option value="$PROJECT_DIR$/views/Wards/view.ejs" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/Doctors/new.ejs" />
         <option value="$PROJECT_DIR$/views/Patients/new.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/Patients/investigation.ejs" />
       </list>
     </option>
   </component>
@@ -191,7 +181,9 @@
     <option name="width" value="1280" />
     <option name="height" value="778" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -224,6 +216,12 @@
               <item name="HMS" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Patients" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HMS" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Wards" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -414,7 +412,7 @@
       <option name="presentableId" value="Default" />
       <updated>1524490583093</updated>
       <workItem from="1524490584273" duration="2918000" />
-      <workItem from="1525333242008" duration="25510000" />
+      <workItem from="1525333242008" duration="26938000" />
     </task>
     <task id="LOCAL-00001" summary="trying">
       <created>1525420280051</created>
@@ -437,11 +435,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525447300864</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="patients admission form added">
+      <created>1525592928175</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1525592928175</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28428000" />
+    <option name="totallyTimeSpent" value="29856000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -512,22 +517,17 @@
     <MESSAGE value="trying" />
     <MESSAGE value="databse added" />
     <MESSAGE value="push 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="push 3" />
+    <MESSAGE value="patients admission form added" />
+    <option name="LAST_COMMIT_MESSAGE" value="patients admission form added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>144</line>
+          <line>151</line>
           <properties />
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app.js</url>
-          <line>134</line>
-          <properties />
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
@@ -552,8 +552,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2752#3128#0" expanded="false" />
-            <element signature="e#3171#3200#0" expanded="false" />
+            <element signature="e#2938#3314#0" expanded="false" />
+            <element signature="e#3357#3386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2776,30 +2776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Patients/edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/Wards/edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/Wards/view.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/Nurses/new.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -2824,18 +2800,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/views/Doctors/new.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="136" column="31" lean-forward="false" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="31" />
-          <folding>
-            <element signature="e#2752#3128#0" expanded="false" />
-            <element signature="e#3171#3200#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Patients/view.ejs">
+    <entry file="file://$PROJECT_DIR$/views/Wards/view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Wards/edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
@@ -2851,18 +2832,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Doctors/new.ejs">
+    <entry file="file://$PROJECT_DIR$/views/Patients/view.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Patients/edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="142" column="3" lean-forward="true" selection-start-line="142" selection-start-column="3" selection-end-line="142" selection-end-column="3" />
+          <folding>
+            <element signature="e#2938#3314#0" expanded="false" />
+            <element signature="e#3357#3386#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Patients/new.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="69" column="20" lean-forward="false" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+        <state relative-caret-position="15">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Patients/investigation.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>

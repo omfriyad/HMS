@@ -132,12 +132,19 @@ app.post('',function (req,res) {
 
 
 //patients
+
 app.get('/patients/new',function (req,res) {
 
     res.render('./Patients/new');
 });
-app.post('',function (req,res) {
+app.get('/patients/investigation',function (req,res) {
 
+    res.render('./Patients/investigation');
+});
+app.post('/patients',function (req,res) {
+
+    console.log(req.body);
+    res.redirect('/patients/investigation');
 });
 
 
