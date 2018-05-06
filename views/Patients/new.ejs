@@ -1,6 +1,8 @@
 <%include ../Extra/Partials/header.ejs%>
 <form action="/patients" method="post">
     <div>
+        <label for="patientId">Patient ID:</label>
+        <input type="number" value="<%=pid%>" readonly>
         <label for="dateOfAdmission">Date of Admission:</label>
         <input type="date" name="dateOfAdmission">
     </div>

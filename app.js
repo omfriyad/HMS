@@ -135,7 +135,7 @@ app.post('',function (req,res) {
 
 app.get('/patients/new',function (req,res) {
 
-    res.render('./Patients/new');
+    res.render('./Patients/new',);
 });
 app.get('/patients/investigation',function (req,res) {
 
