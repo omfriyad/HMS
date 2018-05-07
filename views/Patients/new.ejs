@@ -2,7 +2,7 @@
 <form action="/patients" method="post">
     <div>
         <label for="patientId">Patient ID:</label>
-        <input type="number" value="<%=pid%>" readonly>
+        <input type="number" value="<%=pid%>" readonly name="patientId">
         <label for="dateOfAdmission">Date of Admission:</label>
         <input type="date" name="dateOfAdmission">
     </div>
@@ -23,6 +23,8 @@
         <input type="text" name="mob1">
         <label for="mob2">Mobile2:</label>
         <input type="text" name="mob2">
+        <label for="email">E-mail:</label>
+        <input type="email" name="email">
     </div>
     <div>
         <h3>Present Address</h3>
@@ -54,6 +56,7 @@
         <label for="permDist">District:</label>
         <input type="text" name="permDist">
     </div>
+    <br>
     <div>
         <label for="profession">Profession</label>
         <select name="profession" id="">
@@ -67,7 +70,7 @@
     </div>
     <div>
         <label for="dipoAmount">Amount Diposited: </label>
-        <input type="number">
+        <input type="number" name="depositedAmount">
     </div>
     <div>
         <label for="cabin">Cabin/Ward:</label>

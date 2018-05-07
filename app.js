@@ -70,6 +70,38 @@ function sqlInsert(tableName,data) {
 
 }
 
+function callPros(pros,data) {
+
+    console.log(data);
+    data = Object.values(data);
+
+    var sql = "CALL " + pros +"(";
+
+    for(var i = 0; i < data.length; i++)
+    {
+
+
+        if(Number(data[i]))
+        {
+            sql = sql + " "+data[i]+ returnsComma(i,data.length-1);
+        }
+        else
+        {
+
+            sql = sql + "'"+data[i]+"'" +returnsComma(i,data.length-1);
+        }
+
+
+    }
+
+    sql = sql + ");";
+
+    return sql;
+
+}
+
+
+
 function docAtt() {
 
     var doc={
@@ -172,6 +204,7 @@ app.get('/patients/investigation',function (req,res) {
 app.post('/patients',function (req,res) {
 
     console.log(req.body);
+  //  console.log(callPros(req.body));
     res.redirect('/patients/investigation');
 });
 

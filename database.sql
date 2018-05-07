@@ -268,3 +268,62 @@ begin
 end
 //
 DELIMITER ;
+
+
+
+
+
+DELIMITER //
+
+create procedure PatientsIn(
+    IN patientId INT,
+	IN dateOfAdmission date,
+  	IN fName Varchar(30),
+  	IN mName Varchar(30),
+  	IN lName Varchar(30),
+  	IN dateOfBirth date,
+  	IN mob1 Varchar(15),
+  	IN mob2 Varchar(15),
+  	IN email VARCHAR(30),
+  	IN presSt Varchar(15),
+ 	IN presStName Varchar(30),
+ 	IN presArea Varchar(30),
+ 	IN presThana Varchar(30),
+ 	IN presDist Varchar(30),
+  	IN permSt Varchar(15),
+ 	IN permStName Varchar(30),
+  	IN permArea Varchar(30),
+  	IN permThana Varchar(30),
+  	IN permDist Varchar(30),
+  	IN profession Varchar(30),
+  	IN depositedAmount Double,
+  	IN depositorName Varchar(30),
+  	IN depositorsRel Varchar(30)
+)
+
+begin
+	declare presAddressId INT;
+	declare permAddressId INT;
+	declare contactId INT;
+	declare wardId INT,
+	declare bedId INT,
+
+	INSERT INTO Addresses VALUES (null, presSt, presStName, presArea, presThana, presDist);
+	SET presAddressId = (SELECT addressId FROM Addresses ORDER BY addressId DESC LIMIT 1);
+
+	INSERT INTO Addresses VALUES (null, permSt, permStName, permArea, permThana, permDist);
+	SET permAddressId = (SELECT addressId FROM Addresses ORDER BY addressId DESC LIMIT 1);
+
+	INSERT INTO Contacts Values (mob1, mob2, email);
+	SET contactId = (SELECT contactId FROM Contacts ORDER BY contactId DESC LIMIT 1);
+
+    SET bedId = (SELECT bedId FROM Beds ORDER BY bedId LIMIT 1)
+    SET wardId = (SELECT wardId FROM Beds WHERE Beds.bedId = bedId)
+    INSERT INTO Admitted VALUES(patientId, bedId);
+
+	INSERT INTO Patients VALUES(patientId, dateOfAdmission, fName, mName, lName, dateOfBirth, contactId, presAddressId, permAddressId, profession, amountDeposite,wardId, depositorName, depositorsRel);
+
+
+end
+//
+DELIMITER ;
