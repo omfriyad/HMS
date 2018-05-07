@@ -1,5 +1,74 @@
 <%include ../Extra/Partials/header.ejs%>
 
+<h1> <%=count%> </h1>
 
+<form action="/doctors/new" method="post">
+<% if(count==0){ %>
+        <div>
+            <label for="doctorId">Doctor ID:</label>
+            <input type="number" value="<%=pid%>" readonly>
+        </div>
+        <div>
+            <label for="fName">First Name:</label>
+            <input type="text" name="fName">
+            <label for="mName">Middle Name:</label>
+            <input type="text" name="mName">
+            <label for="lName">Last Name:</label>
+            <input type="text" name="lName">
+        </div>
+        <div>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" name="dateOfBirth">
+            <label for="dateOfAdmission">Date of Appointment:</label>
+            <input type="date" name="dateOfAppointment">
+        </div>
+
+<% } else if(count==1){%>
+
+    <label for="qualifi">Qualifications</label>
+    <div>
+        <table cellpadding="0" cellspacing="0">
+
+            <tr>
+                <% for(var i=0;i<title1.length;i++){ %>
+                <th><label for=title1[i]> <%=title1[i]%> </label><th>
+                    <% } %>
+            </tr>
+
+            <% for(var i=0;i<degree.length;i++){ %>
+            <tr>
+                <td><label for="degree[i]"><%=i+1%></label><td>
+                <td><label for=degree[i]> <%=degree[i]%> </label></td>
+
+                    <% for(var j=2;j<title1.length;j++){ %>
+                <td><input type="text" name= <%=degree[i]%> value=<%=j+1%> ></td>
+                <% } %>
+            </tr>
+            <% } %>
+
+        </table>
+    </div>
+<% } else{%>
+            <table>
+                <tr>
+                    <% for(var i=0;i<title2.length;i++){ %>
+                    <th><label for=title2[i]> <%=title2[i]%> </label></th>
+                    <% } %>
+                <tr>
+
+                    <% for(var i=0;i<degree.length;i++){ %>
+                <tr>
+                    <td><label for=degree[i]> <%=i+1%> </label></td>
+                    <% for(var j=1;j<title2.length;j++){ %>
+                    <td><input type="text" name= <%=i+1%> value=<%=j+1%> ></td>
+                    <% } %>
+                </tr>
+                <% } %>
+
+            </table>
+    <%}%>
+
+    <input type="submit" class="btn-success">
+</form>
 
 <%include ../Extra/Partials/footer.ejs%>

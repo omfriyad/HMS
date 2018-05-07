@@ -70,6 +70,18 @@ function sqlInsert(tableName,data) {
 
 }
 
+function docAtt() {
+
+    var doc={
+        count:0,
+        title1:["Serial No.","Degree","Board","Year","Division/CGPA","Position"],
+        title2:["Serial NO","Job Title","From","To","Organization"],
+        degree:["SSC","HSC","BSc"]
+    };
+
+    return doc;
+};
+
 /**********************************ROUTES******************************************/
 //index
 app.get('/',function (req,res) {
@@ -77,12 +89,28 @@ app.get('/',function (req,res) {
 });
 
 //doctors
-app.get('',function (req,res) {
-
+app.get('/doctors/',function (req,res) {
+    res.render('./Doctors/view');
 });
-app.post('',function (req,res) {
 
+var a=docAtt();
+app.get('/doctors/new',function (req,res) {
+    res.render('./Doctors/new',{title1: a['title1'], title2: a['title2'], degree: a['degree'], pid: "1", count: a['count']});
+    a['count']++;
 });
+
+app.post('/doctors/new',function (req,res) {
+
+    console.log("submit button clicked "+a['count']+" times");
+    console.log(req.body);
+    if(a['count']<3) {
+        res.redirect('/doctors/new');
+    }else{
+        res.redirect('/doctors/');
+        a['count']=0;
+    }
+});
+
 
 //medicines
 app.get('/medicines/',function (req,res) {
@@ -122,7 +150,7 @@ app.post('',function (req,res) {
 });
 
 
-//words
+//wards
 app.get('',function (req,res) {
 
 });
@@ -135,7 +163,7 @@ app.post('',function (req,res) {
 
 app.get('/patients/new',function (req,res) {
 
-    res.render('./Patients/new',);
+    res.render('./Patients/new',{pid:"1"});
 });
 app.get('/patients/investigation',function (req,res) {
 
