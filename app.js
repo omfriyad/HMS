@@ -21,6 +21,12 @@ var connection = mysql.createConnection(
     }
 );
 
+//resposible for /root static items
+//app.use('/',express.static('./views/Extra/Statics'));
+app.use('/', express.static('./views/Extra/Statics'));
+
+/******************************************Proyojonio functions :') *********/
+
 function getNextPrimaryKey(tableName,primaryKey,getNext) {
 
     connection.query('SELECT '+primaryKey+' FROM ' +tableName+' ORDER BY '+primaryKey+' DESC LIMIT 1',function (err,result) {
@@ -145,6 +151,15 @@ app.post('/doctors/new',function (req,res) {
 
 
 //medicines
+
+
+app.get('/medicines/new',function (req,res) {
+    getNextPrimaryKey("Medicines","medicineId",function(err,result){
+        console.log("Outside "+result);
+        res.render('./Medicines/new',{medC:result});
+    });
+});
+
 app.get('/medicines/',function (req,res) {
     //res.render('./Medicines/view');
     connection.query("SELECT * FROM Medicines",function(err,result){
@@ -154,13 +169,6 @@ app.get('/medicines/',function (req,res) {
             var a=Object.values(result);
             res.render("./Medicines/view", {data:a} );
         }
-    });
-});
-
-app.get('/medicines/new',function (req,res) {
-    getNextPrimaryKey("Medicines","medicineId",function(err,result){
-        console.log("Outside "+result);
-        res.render('./Medicines/new',{medC:result});
     });
 });
 
