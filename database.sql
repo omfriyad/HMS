@@ -167,3 +167,104 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+create table Patients(
+	dateOfAdmission Date NOT NULL,
+	patientsId INT NOT NULL AUTO_INCREMENT,
+	mob1 VARCHAR(30),
+	mob2 VARCHAR(30),
+	dateOfBirth Date,
+	profession VARCHAR(30),
+	amountDeposite double,
+	wardId INT,
+
+	PRIMARY KEy(patientsId),
+	FOREIGN KEY(wardId) REFERENCES
+);
+
+create table Wards(
+
+	wardId INT NOT NULL AUTO_INCREMENT,
+	warName VARCHAR(30),
+
+
+
+);
+
+
+create table Patients(
+	patientId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	dateOfAdmission DATE NOT NULL,
+	fName VARCHAR(30) NOT NULL,
+	mName VARCHAR(30) NOT NULL,
+	lName VARCHAR(30) NOT NULL,
+	dateOfBirth DATE NOT NULL,
+	contactId  INT,
+	presAddress  INT NOT NULL,
+	permAddress  INT,
+	profession VARCHAR(45),
+	amountDeposite double,
+	wardId INT NOT NULL,
+	depositorName VARCHAR(60),
+	depositorsRel VARCHAR(30),
+
+
+	FOREIGN KEY (presAddress) REFERENCES Addresses(addressId),
+	FOREIGN KEY (permAddress) REFERENCES Addresses(addressId),
+	FOREIGN KEY (wardId) REFERENCES Wards,
+
+
+);
+
+Create function insertAndReturnAddreessId(street varchar(30),
+										streetName varchar(30),
+										area varchar(30),
+										thana varchar(30),
+										district varchar(30)) returns int
+begin
+	insert into Addresses values (NULL, street, streetName, area, thana, district);
+
+	return (SELECT addressId FROM Addresses ORDER BY addressId DESC LIMIT 1);
+end
+
+
+
+
+Create procedure insertAndReturnAddreessId(IN street varchar(30),
+										IN streetName varchar(30),
+										IN area varchar(30),
+										IN thana varchar(30),
+										IN district varchar(30),
+										OUT addressId INT)
+	begin
+	insert into Addresses values (NULL, street, streetName, area, thana, district);
+	SET addressId = (SELECT addressId FROM Addresses ORDER BY addressId DESC LIMIT 1);
+	end
+
+
+DELIMITER //
+
+create procedure contactIn (IN mob1 Varchar(15),IN email Varchar(30), OUT contactId INT )
+begin
+ insert into Contacts values (null,mob1,email);
+ set contactId = (SELECT contactId FROM Contacts ORDER BY contactId DESC LIMIT 1);
+end
+//
+DELIMITER ;
+
+
+DELIMITER //
+
+create procedure TesPr (in street Varchar(15), in streetName Varchar(30), in area Varchar(30),in thana Varchar(30),IN district Varchar(30), IN mob1 Varchar(15),IN email Varchar(30) )
+begin
+	declare addressId INT;
+	declare contactId INT;
+
+	call addressIn(street, streetName, area, thana, district, addressId);
+	call contactIn(mob1, email, contactId);
+	insert into testPros values (contactId, addressId);
+
+end
+//
+DELIMITER ;
