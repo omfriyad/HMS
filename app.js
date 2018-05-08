@@ -142,11 +142,20 @@ app.post('/doctors/new',function (req,res) {
 
     //console.log("submit button clicked "+a['count']+" times");
     console.log(req.body);
-    if(a['count']<3) {
-        res.redirect('/doctors/new');
-    }else{
-        res.redirect('/doctors/');
-        a['count']=0;
+    switch(a['count']){
+        case 0:
+            res.redirect('/doctors/new');
+            break;
+        case 1:
+            res.redirect('/doctors/new');
+            break;
+        case 2:
+            res.redirect('/doctors/new');
+            break;
+        default:
+            res.redirect('/doctors/');
+
+            break;
     }
 });
 
@@ -205,10 +214,15 @@ app.post('/nurses/new',function (req,res) {
 
 
 //wards
-app.get('',function (req,res) {
-
+app.get('/wards',function (req,res) {
+    res.render('./Wards/view');
 });
-app.post('',function (req,res) {
+
+app.get('/wards/new',function (req,res) {
+    res.render('./Wards/view');
+});
+
+app.post('/wards',function (req,res) {
 
 });
 
