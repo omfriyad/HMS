@@ -21,6 +21,12 @@ var connection = mysql.createConnection(
     }
 );
 
+//resposible for /root static items
+//app.use('/',express.static('./views/Extra/Statics'));
+app.use('/', express.static('./views/Extra/Statics'));
+
+/******************************************Proyojonio functions :') *********/
+
 function getNextPrimaryKey(tableName,primaryKey,getNext) {
 
     connection.query('SELECT '+primaryKey+' FROM ' +tableName+' ORDER BY '+primaryKey+' DESC LIMIT 1',function (err,result) {
@@ -70,6 +76,38 @@ function sqlInsert(tableName,data) {
 
 }
 
+function callPros(pros,data) {
+
+    console.log(data);
+    data = Object.values(data);
+
+    var sql = "CALL " + pros +"(";
+
+    for(var i = 0; i < data.length; i++)
+    {
+
+
+        if(Number(data[i]))
+        {
+            sql = sql + " "+data[i]+ returnsComma(i,data.length-1);
+        }
+        else
+        {
+
+            sql = sql + "'"+data[i]+"'" +returnsComma(i,data.length-1);
+        }
+
+
+    }
+
+    sql = sql + ");";
+
+    return sql;
+
+}
+
+
+
 function docAtt() {
 
     var doc={
@@ -113,6 +151,15 @@ app.post('/doctors/new',function (req,res) {
 
 
 //medicines
+
+
+app.get('/medicines/new',function (req,res) {
+    getNextPrimaryKey("Medicines","medicineId",function(err,result){
+        console.log("Outside "+result);
+        res.render('./Medicines/new',{medC:result});
+    });
+});
+
 app.get('/medicines/',function (req,res) {
     //res.render('./Medicines/view');
     connection.query("SELECT * FROM Medicines",function(err,result){
@@ -122,13 +169,6 @@ app.get('/medicines/',function (req,res) {
             var a=Object.values(result);
             res.render("./Medicines/view", {data:a} );
         }
-    });
-});
-
-app.get('/medicines/new',function (req,res) {
-    getNextPrimaryKey("Medicines","medicineId",function(err,result){
-        console.log("Outside "+result);
-        res.render('./Medicines/new',{medC:result});
     });
 });
 
@@ -172,6 +212,7 @@ app.get('/patients/investigation',function (req,res) {
 app.post('/patients',function (req,res) {
 
     console.log(req.body);
+    //console.log(callPros(req.body));
     res.redirect('/patients/investigation');
 });
 
