@@ -17,7 +17,7 @@ var connection = mysql.createConnection(
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'hmss'
+        database: 'hms'
     }
 );
 
@@ -72,18 +72,16 @@ function sqlInsert(tableName,data) {
 
         sql = sql + ");";
 
-        console.log(sql);
-
     return sql;
 
 }
 
-function callProcedure(tableName,data) {
+function callPros(pros,data) {
 
     console.log(data);
     data = Object.values(data);
 
-    var sql = "CALL " + tableName +" (";
+    var sql = "CALL " + pros +"(";
 
     for(var i = 0; i < data.length; i++)
     {
@@ -104,20 +102,19 @@ function callProcedure(tableName,data) {
 
     sql = sql + ");";
 
-    console.log(sql);
-
     return sql;
 
 }
 
 
-function docAtt() {
+
+function docForm() {
 
     var doc={
         count:0,
         title1:["Serial No.","Degree","Board","Year","Division/CGPA","Position"],
         title2:["Serial NO","Job Title","From","To","Organization"],
-        degree:["SSC","HSC","BSc"]
+        degree:["SSC","HSC","MBBS"]
     };
 
     return doc;
@@ -134,7 +131,8 @@ app.get('/doctors/',function (req,res) {
     res.render('./Doctors/view');
 });
 
-var a=docAtt();
+
+var a=docForm();
 app.get('/doctors/new',function (req,res) {
     res.render('./Doctors/new',{title1: a['title1'], title2: a['title2'], degree: a['degree'], pid: "1", count: a['count']});
     a['count']++;
@@ -142,7 +140,7 @@ app.get('/doctors/new',function (req,res) {
 
 app.post('/doctors/new',function (req,res) {
 
-    console.log("submit button clicked "+a['count']+" times");
+    //console.log("submit button clicked "+a['count']+" times");
     console.log(req.body);
     if(a['count']<3) {
         res.redirect('/doctors/new');
@@ -153,9 +151,8 @@ app.post('/doctors/new',function (req,res) {
 });
 
 
+
 //medicines
-
-
 app.get('/medicines/new',function (req,res) {
     getNextPrimaryKey("Medicines","medicineId",function(err,result){
         console.log("Outside "+result);
@@ -177,7 +174,7 @@ app.get('/medicines/',function (req,res) {
 
 app.post('/medicines',function (req,res) {
 
-    console.log(sqlInsert("Medicines",req.body));
+    //console.log(sqlInsert("Medicines",req.body));
     connection.query(sqlInsert("Medicines",req.body));
     res.redirect('/medicines');
 
@@ -185,11 +182,25 @@ app.post('/medicines',function (req,res) {
 
 
 //nurses
-app.get('',function (req,res) {
 
+var b=docForm();
+app.get('/nurses/',function (req,res) {
+    res.render("./Nurses/view");
 });
-app.post('',function (req,res) {
 
+app.get('/nurses/new',function (req,res) {
+    res.render('./Nurses/new',{title1: b['title1'], title2: b['title2'], degree: b['degree'], pid: "1", count: b['count']});
+    b['count']++;
+});
+
+app.post('/nurses/new',function (req,res) {
+    console.log(req.body);
+    if(b['count']<3) {
+        res.redirect('/nurses/new');
+    }else{
+        res.redirect('/nurses/');
+        b['count']=0;
+    }
 });
 
 
@@ -206,21 +217,16 @@ app.post('',function (req,res) {
 
 app.get('/patients/new',function (req,res) {
 
-
     res.render('./Patients/new',{pid:"1"});
 });
-
-
 app.get('/patients/investigation',function (req,res) {
 
     res.render('./Patients/investigation');
 });
-
-
 app.post('/patients',function (req,res) {
 
-    connection.query(callProcedure('patientIn',req.body));
-
+    console.log(req.body);
+    //console.log(callPros(req.body));
     res.redirect('/patients/investigation');
 });
 
