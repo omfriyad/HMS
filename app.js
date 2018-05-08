@@ -17,7 +17,7 @@ var connection = mysql.createConnection(
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'hms'
+        database: 'hmss'
     }
 );
 
@@ -72,16 +72,18 @@ function sqlInsert(tableName,data) {
 
         sql = sql + ");";
 
+        console.log(sql);
+
     return sql;
 
 }
 
-function callPros(pros,data) {
+function callProcedure(tableName,data) {
 
     console.log(data);
     data = Object.values(data);
 
-    var sql = "CALL " + pros +"(";
+    var sql = "CALL " + tableName +" (";
 
     for(var i = 0; i < data.length; i++)
     {
@@ -102,10 +104,11 @@ function callPros(pros,data) {
 
     sql = sql + ");";
 
+    console.log(sql);
+
     return sql;
 
 }
-
 
 
 function docAtt() {
@@ -203,16 +206,21 @@ app.post('',function (req,res) {
 
 app.get('/patients/new',function (req,res) {
 
+
     res.render('./Patients/new',{pid:"1"});
 });
+
+
 app.get('/patients/investigation',function (req,res) {
 
     res.render('./Patients/investigation');
 });
+
+
 app.post('/patients',function (req,res) {
 
-    console.log(req.body);
-    //console.log(callPros(req.body));
+    connection.query(callProcedure('patientIn',req.body));
+
     res.redirect('/patients/investigation');
 });
 
