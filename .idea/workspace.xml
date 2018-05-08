@@ -1,173 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96d59dba-70a7-404d-afc0-7db670df88bd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/bootstrap/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/bootstrap/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/bootstrap/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/bootstrap/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/font/Flaticon.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/font/Flaticon.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/font/Flaticon.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/license/license.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/icomoon/icomoon.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/icomoon/icomoon.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/icomoon/icomoon.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/about.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/blog-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/blog-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/blog-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/blog-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/blog-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/blog-6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/doctor-single.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/img_bg_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/img_bg_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/img_bg_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/img_bg_5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/img_bg_6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/loc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/person1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/person2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/person3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/staff-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/staff-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/staff-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/images/staff-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/suhan.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/flexslider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/icomoon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/magnific-popup.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/owl.carousel.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/owl.theme.default.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/style.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/bootstrap/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/backup.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/font/Flaticon.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/font/_flaticon.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/font/flaticon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/flaticon/font/flaticon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/fonts/icomoon/icomoon.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/google_map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.countTo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.easing.1.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.flexslider-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.magnific-popup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.stellar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.style.switcher.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.waypoints.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/magnific-popup-options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/modernizr-2.6.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/owl.carousel.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/sticky-kit.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/_bootstrap-compass.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/_bootstrap-mincer.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/_bootstrap-sprockets.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_alerts.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_badges.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_breadcrumbs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_button-groups.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_buttons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_carousel.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_close.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_code.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_component-animations.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_dropdowns.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_forms.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_glyphicons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_grid.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_input-groups.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_jumbotron.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_labels.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_list-group.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_media.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_modals.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_navbar.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_navs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_normalize.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_pager.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_pagination.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_panels.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_popovers.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_print.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_progress-bars.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_responsive-embed.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_responsive-utilities.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_scaffolding.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_tables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_theme.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_thumbnails.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_tooltip.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_type.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_utilities.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/_wells.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_alerts.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_background-variant.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_border-radius.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_buttons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_center-block.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_clearfix.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_forms.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_gradients.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_grid-framework.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_grid.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_hide-text.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_image.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_labels.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_list-group.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_nav-divider.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_nav-vertical-align.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_opacity.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_pagination.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_panels.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_progress-bar.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_reset-filter.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_reset-text.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_resize.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_responsive-visibility.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_size.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_tab-focus.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_table-row.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_text-emphasis.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_text-overflow.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/bootstrap/mixins/_vendor-prefixes.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Extra/Statics/sass/style.scss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap-grid.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap-grid.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap-grid.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap-grid.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap-reboot.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap-reboot.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap-reboot.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap-reboot.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.bundle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.bundle.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.bundle.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.bundle.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.min.js.map" afterPath="" />
+    <list default="true" id="96d59dba-70a7-404d-afc0-7db670df88bd" name="Default" comment="Merge branch 'master' of https://github.com/xdriyad/HMS&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.sql" afterPath="$PROJECT_DIR$/database.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Extra/Partials/footer.ejs" afterPath="$PROJECT_DIR$/views/Extra/Partials/footer.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Extra/Partials/header.ejs" afterPath="$PROJECT_DIR$/views/Extra/Partials/header.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap.css" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/views/Extra/Statics/css/bootstrap.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.min.js" afterPath="$PROJECT_DIR$/views/Extra/Statics/js/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Patients/new.ejs" afterPath="$PROJECT_DIR$/views/Patients/new.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="$PROJECT_DIR$/views/index.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -181,41 +18,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1201">
-              <caret line="215" column="28" lean-forward="true" selection-start-line="215" selection-start-column="28" selection-end-line="215" selection-end-column="28" />
+            <state relative-caret-position="376">
+              <caret line="160" column="3" lean-forward="true" selection-start-line="160" selection-start-column="3" selection-end-line="160" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6623">
+            <state relative-caret-position="8322">
               <caret line="571" column="0" lean-forward="true" selection-start-line="571" selection-start-column="0" selection-end-line="571" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/Extra/Partials/header.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/Extra/Partials/footer.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="97" column="70" lean-forward="false" selection-start-line="97" selection-start-column="70" selection-end-line="97" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -327,7 +144,8 @@
               <item name="HMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="HMS" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Patients" type="462c0819:PsiDirectoryNode" />
+              <item name="Extra" type="462c0819:PsiDirectoryNode" />
+              <item name="Partials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -409,7 +227,7 @@
       <workItem from="1525621945123" duration="4402000" />
       <workItem from="1525656371049" duration="3903000" />
       <workItem from="1525749668626" duration="553000" />
-      <workItem from="1525760042578" duration="1886000" />
+      <workItem from="1525760042578" duration="2571000" />
     </task>
     <task id="LOCAL-00001" summary="trying">
       <created>1525420280051</created>
@@ -450,7 +268,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42736000" />
+    <option name="totallyTimeSpent" value="43421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,12 +284,13 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20889595" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7551582" sideWeight="0.25893566" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.49722" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26822558" sideWeight="0.50913423" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.4940429" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26822558" sideWeight="0.49722" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26822558" sideWeight="0.49086577" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24071527" sideWeight="0.7410643" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24071527" sideWeight="0.7267673" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -481,7 +300,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -523,7 +341,8 @@
     <MESSAGE value="databse added" />
     <MESSAGE value="push 3" />
     <MESSAGE value="patients admission form added" />
-    <option name="LAST_COMMIT_MESSAGE" value="patients admission form added" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/xdriyad/HMS&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/xdriyad/HMS&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -864,34 +683,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/Extra/Partials/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <marker date="1525766707944" expanded="true" signature="1783:1856" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="1874:5701" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="1928:5701" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="1977:5699" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2008:5688" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2044:3382" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2078:3363" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2122:3340" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2164:3313" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2210:3282" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2265:2453" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2508:2842" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2562:2803" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2897:3247" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="2951:3208" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="3418:5673" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="3458:5654" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="3496:5631" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="3543:5389" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="3592:5358" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="3629:5323" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="3781:4107" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="3918:4065" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="4251:4828" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="4396:4786" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="4890:5205" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="5021:5163" ph="..." />
+            <marker date="1525766707944" expanded="true" signature="5436:5604" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="160" column="3" lean-forward="true" selection-start-line="160" selection-start-column="3" selection-end-line="160" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/Extra/Partials/footer.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="97" column="70" lean-forward="false" selection-start-line="97" selection-start-column="70" selection-end-line="97" selection-end-column="70" />
+        <state relative-caret-position="1455">
+          <caret line="97" column="75" lean-forward="false" selection-start-line="97" selection-start-column="75" selection-end-line="97" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6623">
+        <state relative-caret-position="8322">
           <caret line="571" column="0" lean-forward="true" selection-start-line="571" selection-start-column="0" selection-end-line="571" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/Extra/Partials/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1201">
-          <caret line="215" column="28" lean-forward="true" selection-start-line="215" selection-start-column="28" selection-end-line="215" selection-end-column="28" />
           <folding />
         </state>
       </provider>
