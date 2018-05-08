@@ -327,3 +327,109 @@ begin
 end
 //
 DELIMITER ;
+
+
+
+
+DELIMITER //
+
+create procedure PatientIn(
+	IN dateOfAppointment date,
+  	IN fName Varchar(30),
+  	IN mName Varchar(30),
+  	IN lName Varchar(30),
+  	IN dateOfBirth date,
+  	IN mob1 Varchar(15),
+  	IN mob2 Varchar(15),
+  	IN email VARCHAR(30),
+  	IN presSt Varchar(15),
+ 	IN presStName Varchar(30),
+ 	IN presArea Varchar(30),
+ 	IN presThana Varchar(30),
+ 	IN presDist Varchar(30),
+  	IN permSt Varchar(15),
+ 	IN permStName Varchar(30),
+  	IN permArea Varchar(30),
+  	IN permThana Varchar(30),
+  	IN permDist Varchar(30),
+    IN workingDays Varchar(7),
+  	IN specilation Varchar(30),
+  	IN registerId int,
+  	IN membership Varchar(30),
+  	IN visitFee double,
+)
+
+begin
+	declare presAddressId INT;
+	declare permAddressId INT;
+	declare contactId INT;
+    declare doctorId INT;
+
+
+    SET patientId = (SELECT doctorId FROM doctors ORDER BY doctorId DESC LIMIT 1) +1;
+
+	INSERT INTO Addresses VALUES (null, presSt, presStName, presArea, presThana, presDist);
+	SET presAddressId = (SELECT addressId FROM Addresses ORDER BY addressId DESC LIMIT 1);
+
+	INSERT INTO Addresses VALUES (null, permSt, permStName, permArea, permThana, permDist);
+	SET permAddressId = (SELECT addressId FROM Addresses ORDER BY addressId DESC LIMIT 1);
+
+	INSERT INTO Contacts Values (mob1, mob2, email);
+	SET contactId = (SELECT contactId FROM Contacts ORDER BY contactId DESC LIMIT 1);
+
+	INSERT INTO doctors VALUES(doctorId,	dateOfAppointment,	fName,	mName,	lName,	dateOfBirth,	contactId,	presAddressId, permAddressId,	workingDays,	specilation,	registerId,	membership,	visitFee);
+
+
+end
+//
+DELIMITER ;
+
+
+create procedure doctorIn(
+	IN dateOfAppointment date,
+  	IN fName Varchar(30),
+  	IN mName Varchar(30),
+  	IN lName Varchar(30),
+  	IN dateOfBirth date,
+  	IN mob1 Varchar(15),
+  	IN mob2 Varchar(15),
+  	IN email VARCHAR(30),
+  	IN presSt Varchar(15),
+ 	IN presStName Varchar(30),
+ 	IN presArea Varchar(30),
+ 	IN presThana Varchar(30),
+ 	IN presDist Varchar(30),
+  	IN permSt Varchar(15),
+ 	IN permStName Varchar(30),
+  	IN permArea Varchar(30),
+  	IN permThana Varchar(30),
+  	IN permDist Varchar(30),
+    IN workingDays Varchar(7),
+  	IN specilation Varchar(30),
+  	IN registerId int,
+  	IN membership Varchar(30),
+  	IN visitFee double
+)
+
+begin
+	declare presAddressId INT;
+	declare permAddressId INT;
+	declare contactId INT;
+    declare doctorId INT;
+
+
+    SET doctorId = ((SELECT doctorId FROM doctors ORDER BY doctorId DESC LIMIT 1) + 1);
+
+	INSERT INTO Addresses VALUES (null, presSt, presStName, presArea, presThana, presDist);
+	SET presAddressId = (SELECT addressId FROM Addresses ORDER BY addressId DESC LIMIT 1);
+
+	INSERT INTO Addresses VALUES (null, permSt, permStName, permArea, permThana, permDist);
+	SET permAddressId = (SELECT addressId FROM Addresses ORDER BY addressId DESC LIMIT 1);
+
+	INSERT INTO Contacts Values (null, mob1, mob2, email);
+	SET contactId = (SELECT contactId FROM Contacts ORDER BY contactId DESC LIMIT 1);
+
+	INSERT INTO doctors VALUES(doctorId, dateOfAppointment,	fName,	mName,	lName,	dateOfBirth,	contactId,	presAddressId, permAddressId,	workingDays,	specilation,	registerId,	membership,	visitFee);
+
+
+end

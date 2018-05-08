@@ -1,7 +1,80 @@
 <%include ../Extra/Partials/header.ejs%>
 
-<div>will come from server</div>
+<div class="container">
+    <br>
+    <form action="/patients" method="post">
+        <!--
+        <div>
+            <label for="patientId">Patient ID:</label>
+            <input type="number" name="patientId" value="" readonly>
+            <label for="dateOfAdmission">Date of Admission:</label>
+            <input type="date" name="dateOfAdmission"  value="" readonly>
+        </div>
+        <div>
+            <label for="fName">First Name:</label>
+            <input type="text "name="fName"  value="" readonly>
+            <label for="mName">Middle Name:</label>
+            <input type="text" name="mName"  value="" readonly>
+            <label for="lName">Last Name:</label>
+            <input type="text" name="lName"  value="" readonly>
+        </div>
+        <div>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" name="dateOfBirth"  value="" readonly>
+        </div>
+        -->
+        <label for="personalInfo">Personal Information</label>
+        <div>
+            <label for="height">Height</label>
+            <input type="text "name="height" value="">
+            <label for="weight">Weight</label>
+            <input type="text" name="weight" value="">
+        </div>
+        <div>
+            <label for="symptopms">Sympotoms of the disease</label>
+            1.<input type="text" name="symptopms" value="">
+            2.<input type="text" name="symptopms" value="">
+            3.<input type="text" name="symptopms" value="">
+            <br>
+            4.<input type="text" name="symptopms" value="">
+            5.<input type="text" name="symptopms" value="">
+            6.<input type="text" name="symptopms" value="">
+        </div>
 
+        <div>
+            <label for=""></label>
+            <input type="text "name="" value="">
+            <label for=""></label>
+            <input type="text" name="" value="">
+        </div>
+
+        <div>
+            <br>
+            <label for="game">Game:</label>
+            <br>
+            <input type="checkbox" name="game" value="Football"> 1)Football
+            <br>
+            <input type="checkbox" name="game" value="Hokey"> 2)Hokey
+            <br>
+            <input type="checkbox" name="game" value="Volley Ball"> 3)Volley Ball
+            <br>
+            <input type="checkbox" name="game" value="Cricket"> 4)Cricket
+            <br>
+            <input type="checkbox" name="game" value="Chess"> 5)Chess
+            <br>
+            <input type="checkbox" name="game" value="All"> 6)All
+            <br>
+            <input type="checkbox" name="game" value="None"> 7)
+        </div>
+
+
+
+
+
+        <input type="submit" class="btn-success">
+    </form>
+
+</div>
 
 
 <%include ../Extra/Partials/footer.ejs%>

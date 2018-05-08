@@ -1,2 +1,114 @@
 <%include ../Extra/Partials/header.ejs%>
+
+
+<div class="container">
+
+    <form action="/nurses/new" method="post">
+        <% if(count==0){ %>
+        <div>
+            <label for="dateOfAdmission">Date of Admission:</label>
+            <input type="date" name="dateOfAdmission">
+        </div>
+        <div>
+            <label for="fName">First Name:</label>
+            <input type="text" name="fName">
+            <label for="mName">Middle Name:</label>
+            <input type="text" name="mName">
+            <label for="lName">Last Name:</label>
+            <input type="text" name="lName">
+        </div>
+        <div>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" name="dateOfBirth">
+        </div>
+        <div>
+            <label for="mob1">Mobile1: </label>
+            <input type="text" name="mob1">
+            <label for="mob2">Mobile2:</label>
+            <input type="text" name="mob2">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email">
+        </div>
+        <div>
+            <h3>Present Address</h3>
+            <label for="presSt">Street No./Village: </label>
+            <input type="text" name="presSt">
+            <label for="presStName">Street Name:</label>
+            <input type="text" name="presStName">
+            <label for="presArea">Area:</label>
+            <input type="text" name="presArea">
+            <label for="presThana">Thana:</label>
+            <input type="text" name="presThana">
+            <label for="presDist">District:</label>
+            <input type="text" name="presDist">
+
+        </div>
+        <div>
+
+            <h3>Permanent Address</h3>
+            <label for="" class="btn-light">Same as Present</label>
+            <br>
+            <label for="permSt">Street No./Village: </label>
+            <input type="text" name="permSt">
+            <label for="permStName">Street Name:</label>
+            <input type="text" name="permStName">
+            <label for="permArea">Area:</label>
+            <input type="text" name="permArea">
+            <label for="permThana">Thana:</label>
+            <input type="text" name="permThana">
+            <label for="permDist">District:</label>
+            <input type="text" name="permDist">
+        </div>
+
+        <% } else if(count==1){%>
+
+        <label for="qualifi">Qualifications</label>
+        <div>
+            <table cellpadding="0" cellspacing="0">
+
+                <tr>
+                    <% for(var i=0;i<title1.length;i++){ %>
+                    <th><label for=title1[i]> <%=title1[i]%> </label><th>
+                        <% } %>
+                </tr>
+
+                <% for(var i=0;i<degree.length;i++){ %>
+                <tr>
+                    <td><label for="degree[i]"><%=i+1%></label><td>
+                    <td><label for=degree[i]> <%=degree[i]%> </label></td>
+
+                    <% for(var j=2;j<title1.length;j++){ %>
+                    <td><input type="text" name= <%=degree[i]%> value="" ></td>
+                    <% } %>
+                </tr>
+                <% } %>
+
+            </table>
+        </div>
+        <% } else{%>
+        <label for="experience">Experience</label>
+        <table>
+            <tr>
+                <% for(var i=0;i<title2.length;i++){ %>
+                <th><label for=title2[i]> <%=title2[i]%> </label></th>
+                <% } %>
+            <tr>
+
+                <% for(var i=0;i<degree.length;i++){ %>
+            <tr>
+                <td><label for=degree[i]> <%=i+1%> </label></td>
+                <% for(var j=1;j<title2.length;j++){ %>
+                <td><input type="text" name= <%=i+1%> value="" ></td>
+                <% } %>
+            </tr>
+            <% } %>
+
+        </table>
+        <%}%>
+
+        <input type="submit" class="btn-success">
+    </form>
+
+</div>
+
 <%include ../Extra/Partials/footer.ejs%>
