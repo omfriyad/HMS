@@ -214,10 +214,15 @@ app.post('/nurses/new',function (req,res) {
 
 
 //wards
-app.get('',function (req,res) {
-
+app.get('/wards',function (req,res) {
+    res.render('./Wards/view');
 });
-app.post('',function (req,res) {
+
+app.get('/wards/new',function (req,res) {
+    res.render('./Wards/view');
+});
+
+app.post('/wards',function (req,res) {
 
 });
 

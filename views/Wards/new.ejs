@@ -1,4 +1,39 @@
 <%include ../Extra/Partials/header.ejs%>
 
+<div class="container">
+    <label for="wardInfo">Ward Information Form</label>
+    <br>
+    <form action="/patients" method="post">
+
+        //comes from database
+        <div>
+            <label for="wardId">Ward ID:</label>
+            <input type="number" name="wardId" value="" readonly>
+            <br>
+            <label for="wardName">Ward Name:</label>
+            <input type="text" name="wardName" value="" readonly>
+            <br>
+            <label for="registrarId">Registrar ID:</label>
+            <input type="number" name="registrarId" value="" readonly>
+            <label for="registrarName">Registrar Name:</label>
+            <input type="text" name="registrarName" value="" readonly>
+            <br>
+             <label for="supervisorId">Nurse Supervisor ID:</label>
+            <input type="number" name="supervisorId" value="" readonly>
+            <label for="supervisorName">Nurse Supervisor Name:</label>
+            <input type="text" name="supervisorName" value="" readonly>
+        </div>
+        //
+
+
+
+
+
+
+        <input type="submit" class="btn-success">
+    </form>
+
+</div>
+
 
 <%include ../Extra/Partials/footer.ejs%>
