@@ -285,9 +285,7 @@ app.get('/login',function (req,res) {
 app.post('/login',function (req,res) {
 
     //console.log(req.body['username'],req.body['password']);
-    //SELECT id FROM Users WHERE user LIKE "admin" AND pass LIKE "admin"
     //var id='Select id From Users Where user like "'+req.body['username']+'" and pass like "'+req.body['password']+'"';
-    //Select type From Users,WHO Where Users.id=WHO.id AND user like "admin" and pass like "admin"
     var type='Select type From Users,WHO Where Users.id=WHO.id AND user like "'+req.body['username']+'" and pass like "'+req.body['password']+'"';
     //console.log(type);
 
@@ -295,7 +293,7 @@ app.post('/login',function (req,res) {
     connection.query(type,function (err,result) {
         if (!err) {
             usersRows = JSON.parse(JSON.stringify(result));
-            console.log(usersRows[0]["type"]);
+            //console.log(usersRows[0]["type"]);
             res.render('./User/panel',{type:usersRows});
         }
         else {
