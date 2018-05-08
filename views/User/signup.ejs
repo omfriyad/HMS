@@ -1,0 +1,28 @@
+<% include ../Extra/Partials/header.ejs %>
+
+<div class="container">
+
+        <form action="/signup/" method="post">
+            <div class="form-group col-md-4 col-md-offset-4">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password">
+
+                <div>
+                    <label for="pid">Select</label>
+                    <select name="pid" id="">
+                        <% for(var i=0;i<userRows.length;i++){ %>
+                        <option value="<%=userRows[i]["id"]%>"><%=userRows[i]["type"]%></option>
+                        <% } %>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+            </div>
+        </form>
+</div>
+
+
+<% include ../Extra/Partials/footer.ejs %>

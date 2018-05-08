@@ -233,32 +233,63 @@ app.post('/patients',function (req,res) {
 
 //signup
 app.post('/signup',function (req,res) {
+    var sql=sqlInsert("Users",req.body)
+    console.log(sql);
 
-    //console.log(sqlGenerator('Users',req.body));
-    //var user = req.body.username;
-    //var pass = req.body.password;
-    connection.query(sqlInsert('Users',req.body),function (err) {
-        if(err)
-        {
-            console.log('something went wrong');
-        }else
-        {
-            console.log('data inserted');
+    connection.query(sql,function (err) {
+        if (!err) {
+            console.log("Insertion Successful");
+        }
+        else {
+            console.log('Error while performing Query.' + err);
         }
     });
-
     res.redirect('/');
 });
 
 
 app.get('/signup',function (req, res) {
-    res.render('signup');
+
+    var usersRows = [];
+    connection.query('Select * From WHO', function(err, rows,field) {
+        if (!err) {
+            usersRows = JSON.parse(JSON.stringify(rows));
+            //console.log(usersRows);
+            res.render('./User/signup',{userRows:usersRows});
+        }
+        else {
+            console.log('Error while performing Query.' + err);
+        }
+    });
 });
 
+//login
+app.get('/login',function (req,res) {
+    res.render('./User/login');
+});
 
+app.post('/login',function (req,res) {
 
+    //console.log(req.body['username'],req.body['password']);
+    //SELECT id FROM Users WHERE user LIKE "admin" AND pass LIKE "admin"
+    //var id='Select id From Users Where user like "'+req.body['username']+'" and pass like "'+req.body['password']+'"';
+    //Select type From Users,WHO Where Users.id=WHO.id AND user like "admin" and pass like "admin"
+    var type='Select type From Users,WHO Where Users.id=WHO.id AND user like "'+req.body['username']+'" and pass like "'+req.body['password']+'"';
+    //console.log(type);
 
-
+    var usersRows = [];
+    connection.query(type,function (err,result) {
+        if (!err) {
+            usersRows = JSON.parse(JSON.stringify(result));
+            console.log(usersRows[0]["type"]);
+            res.render('./User/panel',{type:usersRows});
+        }
+        else {
+            console.log("error finding user");
+        }
+    });
+    //res.render('./User/panel');
+});
 
 app.listen(3000,function () {
     console.log('server started');
