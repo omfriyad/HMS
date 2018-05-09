@@ -1,4 +1,17 @@
 <%include ../Extra/Partials/header.ejs%>
 
+<%=bill['mode']%>
+
+<%if(bill['mode']==0){%>
+
+<form action="/patients/bill" method="post">
+    <input type="hidden" value="1">
+    <label for="patientId">Patient ID: </label>
+    <input type="number" name="patientId">
+    <input type="submit">
+</form>
+<%}else{%>
+<h1>else</h1>
+<%}%>
 
 <%include ../Extra/Partials/footer.ejs%>

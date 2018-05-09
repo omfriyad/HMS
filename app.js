@@ -194,6 +194,15 @@ var b={
     working:null
 };
 
+var bill = {
+    mode:0,
+    doctorBill:null,
+    medicineBill: null,
+    bedBill: null,
+    depositedAmount: null,
+    totalBill:null
+};
+
 /**********************************ROUTES******************************************/
 //index
 
@@ -394,8 +403,57 @@ app.post('/wards',function (req,res) {
 
 app.get('/patients/bill',function (req, res) {
 
-    res.render('./Patients/bill',{mode:1});
+    res.render('./Patients/bill', {bill:bill});
 });
+
+app.post('/patients/bill',function (req, res) {
+    console.log(req.body);
+    bill['mode'] = 1;
+
+    connection.query("SELECT medicineName, medicineAdviced.quantity, unitePrice, medicineAdviced.quantity*unitePrice as 'total'\n" +
+        "\t\t\t\tFROM Advices, medicineAdviced, Medicines\n" +
+        "   \t\t\t\tWHERE Advices.AdviceId = medicineAdviced.adviceId AND\n" +
+        "    \t\t\tAdvices.patientId = "+req.body['patientId'] +" AND medicineAdviced.medicineId=Medicines.medicineId",function (err,result) {
+        if(!err)
+        {
+            bill['medicineBill'] = result;
+        }
+    });
+
+    connection.query("SELECT Doctors.doctorId, Doctors.fName, adviceId, visitFee FROM Doctors, Advices Where Advices.patientId = "+req.body['patientId']+" and Advices.doctorId = Doctors.doctorId",function (err,result) {
+        if(!err)
+        {
+            bill['doctorBill'] = result;
+        }
+    });
+
+    connection.query("select beds.bedId, bedRent from beds , Admitted\n" +
+        "where beds.bedId = Admitted.bedId and Admitted.patientId = "+ req.body['patientId'] ,function (err, result) {
+        if(!err)
+        {
+            bill['bedBill'] = result;
+        }
+
+    });
+
+    connection.query("select amountDeposite from patients where patientId = 13",function (err,result) {
+       if(!err){
+           bill['depositedAmount'] = Object.values(result[0])[0];
+       }
+
+    });
+
+   sql(callProcedure('updateTotalBill',req.body));
+
+   connection.query('select totalBill from Bills where patientId ='+req.body['patientId'],function (err,result) {
+       bill['totalBill'] = Object.values(result[0])[0];
+       console.log(bill);
+       res.render('./Patients/bill',{bill:bill});
+   });
+
+    bill['mode'] = 0;
+});
+
 
 
 
