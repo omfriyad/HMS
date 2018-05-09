@@ -1,6 +1,6 @@
 <%include ../Extra/Partials/header.ejs%>
 
-<%=count%>
+
 <div class="container">
 
     <form action="/doctors/new" method="post">
@@ -58,6 +58,19 @@
             <input type="text" name="permThana">
             <label for="permDist">District:</label>
             <input type="text" name="permDist">
+        </div>
+
+        <div>
+            <label for="workingDays">Working Days write ase [S T M W R A F]</label>
+            <input type="text" name="workingDays">
+            <label for="specilation">Doctors Specialization</label>
+            <input type="text" name="specilation">
+            <label for="registerId">Register ID</label>
+            <input type="number" name="registerId">
+            <label for="membership">Membership if multiple write with comma</label>
+            <input type="text" name="membership">
+            <label for="visitFee">Visit Fee</label>
+            <input type="number" name="visitFee">
         </div>
 
     <% } else if(count==1){%>

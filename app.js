@@ -17,7 +17,7 @@ var connection = mysql.createConnection(
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'hms'
+        database: 'hmss'
     }
 );
 
@@ -27,6 +27,65 @@ app.use('/', express.static('./views/Extra/Statics'));
 
 /******************************************Proyojonio functions :') *********/
 
+function sql(sql) {
+    connection.query(sql,function (err) {
+        if(err)
+        console.log('sql error from function');
+    })
+}
+
+function qualifiInsert(tableName, data , qualId, id) {
+
+    console.log(id);
+    var sql = "INSERT INTO " + tableName +" VALUES (" + id +"," + qualId+",";
+
+    for(var i = 0; i < data.length; i++)
+    {
+
+        if(Number(data[i]))
+        {
+            sql = sql + " "+data[i]+ returnsComma(i,data.length-1);
+        }
+        else
+        {
+
+            sql = sql + "'"+data[i]+"'" +returnsComma(i,data.length-1);
+        }
+
+
+    }
+    sql = sql + ");";
+
+    return sql;
+
+}
+
+function experInsert(tableName, data, id) {
+
+    console.log(id);
+    var sql = "INSERT INTO " + tableName +" VALUES (" + id +",";
+
+    for(var i = 0; i < data.length; i++)
+    {
+
+        if(Number(data[i]))
+        {
+            sql = sql + " "+data[i]+ returnsComma(i,data.length-1);
+        }
+        else
+        {
+
+            sql = sql + "'"+data[i]+"'" +returnsComma(i,data.length-1);
+        }
+
+
+    }
+    sql = sql + ");";
+
+    return sql;
+
+}
+
 function getNextPrimaryKey(tableName,primaryKey,getNext) {
 
     connection.query('SELECT '+primaryKey+' FROM ' +tableName+' ORDER BY '+primaryKey+' DESC LIMIT 1',function (err,result) {
@@ -34,6 +93,17 @@ function getNextPrimaryKey(tableName,primaryKey,getNext) {
              console.log("error");
         }else{
             return getNext(null,Object.values(result[0])[0]+1);
+        }
+    });
+}
+
+function getWorkingId(tableName,primaryKey,data) {
+
+    connection.query('SELECT '+primaryKey+' FROM ' +tableName+' ORDER BY '+primaryKey+' DESC LIMIT 1',function (err,result) {
+        if(err){
+            console.log("error");
+        }else{
+            data.working=Object.values(result[0])[0];
         }
     });
 }
@@ -76,12 +146,12 @@ function sqlInsert(tableName,data) {
 
 }
 
-function callPros(pros,data) {
+function callProcedure(pros,data) {
 
     console.log(data);
     data = Object.values(data);
 
-    var sql = "CALL " + pros +"(";
+    var sql = "CALL " + pros +" (";
 
     for(var i = 0; i < data.length; i++)
     {
@@ -106,18 +176,22 @@ function callPros(pros,data) {
 
 }
 
+/***************************************?important vars*********/
 
+var a={
+    count:0,
+    title1:["Serial No.","Degree","Board","Year","Division/CGPA","Position"],
+    title2:["Serial NO","Job Title","From","To","Organization"],
+    degree:["SSC","HSC","MBBS"],
+    working:null
+};
 
-function docForm() {
-
-    var doc={
-        count:0,
-        title1:["Serial No.","Degree","Board","Year","Division/CGPA","Position"],
-        title2:["Serial NO","Job Title","From","To","Organization"],
-        degree:["SSC","HSC","MBBS"]
-    };
-
-    return doc;
+var b={
+    count:0,
+    title1:["Serial No.","Degree","Board","Year","Division/CGPA","Position"],
+    title2:["Serial NO","Job Title","From","To","Organization"],
+    degree:["SSC","HSC","MBBS"],
+    working:null
 };
 
 /**********************************ROUTES******************************************/
@@ -132,25 +206,48 @@ app.get('/doctors/',function (req,res) {
 });
 
 
-var a=docForm();
+
 app.get('/doctors/new',function (req,res) {
     res.render('./Doctors/new',{title1: a['title1'], title2: a['title2'], degree: a['degree'], pid: "1", count: a['count']});
-    a['count']++;
+
 });
 
 app.post('/doctors/new',function (req,res) {
 
     //console.log("submit button clicked "+a['count']+" times");
-    console.log(req.body);
+    //console.log(req.body);
     switch(a['count']){
         case 0:
+            getWorkingId('Doctors','doctorId ',a);
+            connection.query(callProcedure("doctorIn",req.body),function (err,res) {
+                if(err)
+                {
+                    console.log('doctor procedure sql error');
+                }
+            });
+            a['count']++;
+            getWorkingId('Doctors','doctorId ',a);
             res.redirect('/doctors/new');
             break;
         case 1:
+            console.log(req.body);
+            console.log('working ID ;;; ' + a['working']);
+
+            sql(qualifiInsert('doc_qualifi',req.body['SSC'],'101', a['working']));
+            sql(qualifiInsert('doc_qualifi',req.body['HSC'],'102', a['working']));
+            sql(qualifiInsert('doc_qualifi',req.body['MBBS'],'103', a['working']));
+
+            a['count']++;
             res.redirect('/doctors/new');
             break;
         case 2:
-            res.redirect('/doctors/new');
+
+           Object.keys(req.body).forEach(function (t) {
+              sql(experInsert('doc_exper',req.body[t], a['working']));
+           });
+            a['count'] = 0;
+            a['working'] = null;
+            res.redirect('/doctors/');
             break;
         default:
             res.redirect('/doctors/');
@@ -158,6 +255,7 @@ app.post('/doctors/new',function (req,res) {
             break;
     }
 });
+
 
 
 
@@ -192,7 +290,6 @@ app.post('/medicines',function (req,res) {
 
 //nurses
 
-var b=docForm();
 app.get('/nurses/',function (req,res) {
     res.render("./Nurses/view");
 });
@@ -246,6 +343,21 @@ app.post('/patients',function (req,res) {
 
 
 //signup
+app.get('/signup',function (req, res) {
+
+    var usersRows = [];
+    connection.query('Select * From WHO', function(err, rows,field) {
+        if (!err) {
+            usersRows = JSON.parse(JSON.stringify(rows));
+            //console.log(usersRows);
+            res.render('./User/signup',{userRows:usersRows});
+        }
+        else {
+            console.log('Error while performing Query.' + err);
+        }
+    });
+});
+
 app.post('/signup',function (req,res) {
     var sql=sqlInsert("Users",req.body)
     console.log(sql);
@@ -261,21 +373,6 @@ app.post('/signup',function (req,res) {
     res.redirect('/');
 });
 
-
-app.get('/signup',function (req, res) {
-
-    var usersRows = [];
-    connection.query('Select * From WHO', function(err, rows,field) {
-        if (!err) {
-            usersRows = JSON.parse(JSON.stringify(rows));
-            //console.log(usersRows);
-            res.render('./User/signup',{userRows:usersRows});
-        }
-        else {
-            console.log('Error while performing Query.' + err);
-        }
-    });
-});
 
 //login
 app.get('/login',function (req,res) {
@@ -301,6 +398,11 @@ app.post('/login',function (req,res) {
         }
     });
     //res.render('./User/panel');
+});
+
+app.get('/user',function (req,res) {
+
+    res.render('./User/panel',{type:1})
 });
 
 app.listen(3000,function () {

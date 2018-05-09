@@ -384,7 +384,7 @@ end
 //
 DELIMITER ;
 
-
+DELIMITER //
 create procedure doctorIn(
 	IN dateOfAppointment date,
   	IN fName Varchar(30),
@@ -433,3 +433,6 @@ begin
 
 
 end
+
+//
+DELIMITER ;
