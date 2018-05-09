@@ -533,9 +533,13 @@ app.post('/login',function (req,res) {
     //res.render('./User/panel');
 });
 
+
+//panel
+
 app.get('/user',function (req,res) {
 
-    res.render('./User/panel',{type:1})
+    //res.render('./User/panel',{type:1})
+    res.render('./User/panel');
 });
 
 app.listen(3000,function () {
