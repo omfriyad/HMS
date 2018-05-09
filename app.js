@@ -200,6 +200,10 @@ app.get('/',function (req,res) {
    res.render('index');
 });
 
+
+
+
+
 //doctors
 app.get('/doctors/',function (req,res) {
     res.render('./Doctors/view');
@@ -384,16 +388,42 @@ app.post('/wards',function (req,res) {
 });
 
 
+
+
 //patients
 
 app.get('/patients/new',function (req,res) {
 
     res.render('./Patients/new',{pid:"1"});
 });
+
+app.post('/patients/investigation',function (req,res) {
+    console.log(req.body);
+    res.render('./Patients/investigation');
+});
+
 app.get('/patients/investigation',function (req,res) {
 
     res.render('./Patients/investigation');
 });
+
+
+
+app.get('/patients/pending',function (req, res) {
+
+    connection.query("select patientId 'Patient ID', dateOfAdmission AS 'Admission Date' , CONCAT(fName, ' ',mName,' ', lName) as Name, dateOfBirth as 'Birth Date'\n" +
+        "from  patients \n" +
+        "where \n" +
+        "patientId not in (select patientId from investigations);",function (err,result) {
+        if(!err)
+        {
+            console.log(result);
+            res.render('./Patients/pending',{result:result});
+        }
+    });
+
+});
+
 app.post('/patients',function (req,res) {
 
     console.log(req.body);

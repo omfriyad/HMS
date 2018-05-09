@@ -436,3 +436,13 @@ end
 
 //
 DELIMITER ;
+
+
+
+
+patient that has not done investigations
+
+select patientId, dateOfAdmission , CONCAT(fName, " ",mName," ", lName) as Name, dateOfBirth
+from  patients
+where
+patientId not in (select patientId from investigations);

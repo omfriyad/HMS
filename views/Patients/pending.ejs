@@ -1,0 +1,32 @@
+<%include ../Extra/Partials/header.ejs%>
+<table class="container">
+    <th>Patient ID</th>
+    <th>Admission Date</th>
+    <th>Name</th>
+    <th>Birth Date</th>
+    <th>DO Investigation</th>
+<%result.forEach(function (t) {%>
+<tr>
+
+    <form action="/patients/investigation" method="post">
+
+        <input type = "hidden" name = "patientId" value = "<%=t['Patient ID']%>" />
+    <td>
+        <label for=""><%=t['Patient ID']%></label>
+    </td>
+    <td>
+        <%=String(t['Admission Date']).substring(4,16)%>
+    </td>
+    <td>
+        <label for=""><%=t['Name']%> </label>
+    </td>
+    <td>
+        <%=String(t['Birth Date']).substring(4,16)%>
+    </td>
+    <td><input type="submit"></td>
+    </form>
+
+</tr>
+<%})%>
+</table>
+<%include ../Extra/Partials/footer.ejs%>
