@@ -190,7 +190,7 @@ var b={
     count:0,
     title1:["Serial No.","Degree","Board","Year","Division/CGPA","Position"],
     title2:["Serial NO","Job Title","From","To","Organization"],
-    degree:["SSC","HSC","MBBS"],
+    degree:["SSC","HSC","BSC"],
     working:null
 };
 
@@ -288,26 +288,86 @@ app.post('/medicines',function (req,res) {
 });
 
 
-//nurses
 
+
+
+//nurse new
 app.get('/nurses/',function (req,res) {
-    res.render("./Nurses/view");
+    res.render('./Nurses/view');
 });
+
+
 
 app.get('/nurses/new',function (req,res) {
     res.render('./Nurses/new',{title1: b['title1'], title2: b['title2'], degree: b['degree'], pid: "1", count: b['count']});
-    b['count']++;
+
 });
 
 app.post('/nurses/new',function (req,res) {
-    console.log(req.body);
-    if(b['count']<3) {
-        res.redirect('/nurses/new');
-    }else{
-        res.redirect('/nurses/');
-        b['count']=0;
+
+    //console.log("submit button clicked "+a['count']+" times");
+    //console.log(req.body);
+    switch(b['count']){
+        case 0:
+            getWorkingId('Nurses','nurseId',b);
+            connection.query(callProcedure("nurseIn",req.body),function (err,res) {
+                if(err)
+                {
+                    console.log('nurse procedure sql error');
+                }
+            });
+            b['count']++;
+            getWorkingId('Nurses','nurseId ',b);
+            res.redirect('/nurses/new');
+            break;
+        case 1:
+            console.log(req.body);
+            console.log('working ID ;;; ' + b['working']);
+
+            sql(qualifiInsert('nurse_qualifi',req.body['SSC'],'101', b['working']));
+            sql(qualifiInsert('nurse_qualifi',req.body['HSC'],'102', b['working']));
+            sql(qualifiInsert('nurse_qualifi',req.body['BSC'],'104', b['working']));
+
+            b['count']++;
+            res.redirect('/nurses/new');
+            break;
+        case 2:
+
+            Object.keys(req.body).forEach(function (t) {
+                sql(experInsert('nurse_exper',req.body[t], b['working']));
+            });
+            b['count'] = 0;
+            b['working'] = null;
+            res.redirect('nurses');
+            break;
+        default:
+            res.redirect('/nurses/');
+
+            break;
     }
 });
+
+
+//nurses old
+//
+// app.get('/nurses/',function (req,res) {
+//     res.render("./Nurses/view");
+// });
+//
+// app.get('/nurses/new',function (req,res) {
+//     res.render('./Nurses/new',{title1: b['title1'], title2: b['title2'], degree: b['degree'], pid: "1", count: b['count']});
+//     b['count']++;
+// });
+//
+// app.post('/nurses/new',function (req,res) {
+//     console.log(req.body);
+//     if(b['count']<3) {
+//         res.redirect('/nurses/new');
+//     }else{
+//         res.redirect('/nurses/');
+//         b['count']=0;
+//     }
+// });
 
 
 //wards
