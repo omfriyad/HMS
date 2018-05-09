@@ -2,25 +2,33 @@
 
 <div class="container">
     <br>
+    <div class="container">
+        <%Object.keys(userRows).forEach(function (t) { %>
+
+        <label> <%=t%>: </label> <label><%=userRows[t]%></label>
+        <br>
+        <%})%>
+
+    </div>
+
     <form action="/patients" method="post">
-        <div>
-            <label for="patientId">Patient ID:</label>
-            <input type="number" name="patientId" value="" readonly>
-            <label for="dateOfAdmission">Date of Admission:</label>
-            <input type="date" name="dateOfAdmission"  value="" readonly>
-        </div>
-        <div>
-            <label for="fName">First Name:</label>
-            <input type="text "name="fName"  value="" readonly>
-            <label for="mName">Middle Name:</label>
-            <input type="text" name="mName"  value="" readonly>
-            <label for="lName">Last Name:</label>
-            <input type="text" name="lName"  value="" readonly>
-        </div>
-        <div>
-            <label for="dateOfBirth">Date of Birth:</label>
-            <input type="date" name="dateOfBirth"  value="" readonly>
-        </div>
+        <!--<div>-->
+            <input type="hidden" name="patientId" value="<%=userRows['Patient ID']%>" readonly>
+            <!--<label for="dateOfAdmission">Date of Admission:</label>-->
+            <!--<input type="date" name="dateOfAdmission"  value="" readonly>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label for="fName">First Name:</label>-->
+            <!--<input type="text "name="fName"  value="" readonly>-->
+            <!--<label for="mName">Middle Name:</label>-->
+            <!--<input type="text" name="mName"  value="" readonly>-->
+            <!--<label for="lName">Last Name:</label>-->
+            <!--<input type="text" name="lName"  value="" readonly>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label for="dateOfBirth">Date of Birth:</label>-->
+            <!--<input type="date" name="dateOfBirth"  value="" readonly>-->
+        <!--</div>-->
 
         <label for="personalInfo">Personal Information</label>
         <div>
@@ -45,7 +53,24 @@
             Lower <input type="text "name="bloodPressure" value="">
             Upper<input type="text" name="bloodPressure" value="">
         </div>
-
+        <div>
+            <label for="Breakfast">Breakfast</label>
+            1.<input type="text" name="Breakfast" value="">
+            2.<input type="text" name="Breakfast" value="">
+            3.<input type="text" name="Breakfast" value="">
+        </div>
+        <div>
+            <label for="Lunch">Lunch</label>
+            1.<input type="text" name="Lunch" value="">
+            2.<input type="text" name="Lunch" value="">
+            3.<input type="text" name="Lunch" value="">
+        </div>
+        <div>
+            <label for="Dinner">Dinner</label>
+            1.<input type="text" name="Dinner" value="">
+            2.<input type="text" name="Dinner" value="">
+            3.<input type="text" name="Dinner" value="">
+        </div>
         <div>
             <br>
             <label for="game">Game:</label>
@@ -64,7 +89,8 @@
             <br>
             <input type="checkbox" name="game" value="None"> 7)None
         </div>
-
+        <label for="other">Other Info:</label>
+        <textarea name="other" id="" cols="30" rows="10"></textarea>
         <div>
             <label for="disease">Disease Name</label>
             <input type="text" name="disease" value="">

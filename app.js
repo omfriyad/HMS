@@ -126,7 +126,7 @@ function sqlInsert(tableName,data) {
         for(var i = 0; i < data.length; i++)
         {
 
-
+            data[i] = String(data[i]);
             if(Number(data[i]))
             {
                 sql = sql + " "+data[i]+ returnsComma(i,data.length-1);
@@ -134,7 +134,7 @@ function sqlInsert(tableName,data) {
             else
             {
 
-                sql = sql + "'"+data[i]+"'" +returnsComma(i,data.length-1);
+                sql = sql + "\""+data[i]+"\"" +returnsComma(i,data.length-1);
             }
 
 
@@ -410,12 +410,15 @@ app.get('/patients/bill',function (req, res) {
 
 
 
+//investigation ekhane post korbe
 
+app.post('/patients/',function (req,res) {
 
-// app.get('/patients/',function (req,res) {
-//
-//     res.render('./Patients/view');
-// });
+   sql( sqlInsert('Investigations',req.body));
+    res.redirect('/');
+});
+
+//merge after this
 
 app.get('/patients/new',function (req,res) {
 
@@ -440,7 +443,6 @@ app.get('/patients/pending',function (req, res) {
         "patientId not in (select patientId from investigations);",function (err,result) {
         if(!err)
         {
-            console.log(result);
             res.render('./Patients/pending',{result:result});
         }
     });
@@ -477,7 +479,6 @@ app.post('/patients/new',function (req,res) {
         "\n",function (err,result) {
         if(!err){
             //usersRows = JSON.parse(JSON.stringify(result));
-            console.log(result);
             res.render('./patients/view',{userRows:result[0]});
         }else{
             console.log('Error while performing view.' + err);
@@ -486,10 +487,30 @@ app.post('/patients/new',function (req,res) {
 
 });
 
+//ekhan theke
 app.post('/patients/investigation',function (req,res) {
-    console.log(req.body);
-    res.render('./Patients/investigation');
+
+    connection.query("select a.patientId as 'Patient ID', a.dateOfAdmission as 'Admission Date', CONCAT(a.fName, ' ', a.mName, ' ',a.lName) as 'Name', a.dateOfBirth as 'Birth Date',\n" +
+        "c.mob1 as 'Mobile (1)', c.mob2 as 'Mobile (2)', c.email as 'E-mail', CONCAT(pr.street, ' ', pr.streetName, ' ', pr.area, ' ',pr.thana,' ', pr.district)  as 'Present Address',CONCAT(pe.street, ' ', pe.streetName, ' ', pe.area, ' ',pe.thana,' ', pe.district)  as 'Permenent Address', a.profession as 'Professional', a.amountDeposite as 'Diposited Amount', a.wardId as 'Word No', ad.bedID as 'Bed No', a.depositorName as 'Depositor Name'\n" +
+        "from patients a, contacts c, addresses pr, addresses pe , admitted ad\n" +
+        "where a.contactId = c.contactId and a.presAddress = pr.addressId and a.permAddress = pe.addressId and ad.patientId = a.patientId and a.patientId = "+req.body['patientId']+ " ;",
+        function (err,result) {
+        if(!err){
+            //usersRows = JSON.parse(JSON.stringify(result));
+            res.render('./Patients/investigation',{userRows:result[0]});
+        }else{
+            console.log('Error while performing view.' + err);
+        }
+    });
+
+
 });
+
+
+
+
+//egula likha merger korar shomy dekha lagbe
+
 
 
 app.post('/patients/prescription',function (req,res) {
