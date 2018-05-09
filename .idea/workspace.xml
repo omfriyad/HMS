@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96d59dba-70a7-404d-afc0-7db670df88bd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Patients/view.ejs" afterPath="$PROJECT_DIR$/views/Patients/view.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/User/panel.ejs" afterPath="$PROJECT_DIR$/views/User/panel.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,21 +18,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="1618">
               <caret line="541" column="4" lean-forward="false" selection-start-line="541" selection-start-column="4" selection-end-line="541" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="panel.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="panel.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/User/panel.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="183" column="39" lean-forward="false" selection-start-line="183" selection-start-column="39" selection-end-line="183" selection-end-column="39" />
+            <state relative-caret-position="172">
+              <caret line="216" column="23" lean-forward="false" selection-start-line="216" selection-start-column="23" selection-end-line="216" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -93,9 +95,9 @@
         <option value="$PROJECT_DIR$/views/Nurses/new.ejs" />
         <option value="$PROJECT_DIR$/views/Doctors/new.ejs" />
         <option value="$PROJECT_DIR$/views/Patients/investigation.ejs" />
-        <option value="$PROJECT_DIR$/views/Patients/view.ejs" />
         <option value="$PROJECT_DIR$/views/Patients/new.ejs" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/Patients/view.ejs" />
         <option value="$PROJECT_DIR$/views/User/panel.ejs" />
       </list>
     </option>
@@ -147,14 +149,7 @@
               <item name="HMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="HMS" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Extra" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HMS" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Extra" type="462c0819:PsiDirectoryNode" />
-              <item name="Statics" type="462c0819:PsiDirectoryNode" />
+              <item name="Patients" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HMS" type="b2602c69:ProjectViewProjectNode" />
@@ -358,7 +353,7 @@
       <workItem from="1525656371049" duration="3903000" />
       <workItem from="1525749668626" duration="553000" />
       <workItem from="1525760042578" duration="2724000" />
-      <workItem from="1525858003140" duration="12486000" />
+      <workItem from="1525858003140" duration="13401000" />
     </task>
     <task id="LOCAL-00001" summary="trying">
       <created>1525420280051</created>
@@ -413,7 +408,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65693000" />
+    <option name="totallyTimeSpent" value="66608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -816,26 +811,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Patients/pending.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/Patients/investigation.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="56" column="62" lean-forward="false" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/Patients/view.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -856,10 +835,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/Patients/pending.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Patients/view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1618">
+          <caret line="541" column="4" lean-forward="false" selection-start-line="541" selection-start-column="4" selection-end-line="541" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/User/panel.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="183" column="39" lean-forward="false" selection-start-line="183" selection-start-column="39" selection-end-line="183" selection-end-column="39" />
+        <state relative-caret-position="172">
+          <caret line="216" column="23" lean-forward="false" selection-start-line="216" selection-start-column="23" selection-end-line="216" selection-end-column="23" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -867,14 +870,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#4;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#6;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="541" column="4" lean-forward="false" selection-start-line="541" selection-start-column="4" selection-end-line="541" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
