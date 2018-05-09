@@ -446,3 +446,47 @@ select patientId, dateOfAdmission , CONCAT(fName, " ",mName," ", lName) as Name,
 from  patients
 where
 patientId not in (select patientId from investigations);
+
+
+
+
+
+@doctorBill = SELECT sum(visitFee) FROM Doctors,Advices
+Where Advices.patientId = patientId and Advices.doctorId = Doctors.doctorId;
+@medicineBill = SELECT 	SUM(medicineAdviced.quantity*Medicines.unitePrice)
+	FROM Advices, medicineAdviced, Medicines
+    WHERE Advices.AdviceId = medicineAdviced.adviceId AND
+    Advices.patientId = patientId AND 			 medicineAdviced.medicineId=Medicines.medicineId;
+
+@bedBill = SELECT bedRent FROM Beds
+		WHERE bedId = (SELECT bedId FROM Admitted WHERE Admitted.patientId =patientId );
+@totalBill = @doctorBill +@medicineBill+@bedBill;
+
+INSERT INTO Bills(patientId,@totalBill) VALUES(patientId,t@otalBill)ON DUPLICATE KEY UPDATE totalBill = @totalBill;
+
+
+
+DELIMITER //
+
+create procedure PatientsIn(
+    IN patientId INT
+)
+
+begin
+
+@doctorBill = SELECT sum(visitFee) FROM Doctors,Advices
+Where Advices.patientId = patientId and Advices.doctorId = Doctors.doctorId;
+@medicineBill = SELECT 	SUM(medicineAdviced.quantity*Medicines.unitePrice)
+	FROM Advices, medicineAdviced, Medicines
+    WHERE Advices.AdviceId = medicineAdviced.adviceId AND
+    Advices.patientId = patientId AND 			 medicineAdviced.medicineId=Medicines.medicineId;
+
+@bedBill = SELECT bedRent FROM Beds
+		WHERE bedId = (SELECT bedId FROM Admitted WHERE Admitted.patientId =patientId );
+@totalBill = @doctorBill +@medicineBill+@bedBill;
+
+INSERT INTO Bills(patientId,@totalBill) VALUES(patientId,t@otalBill)ON DUPLICATE KEY UPDATE totalBill = @totalBill;
+
+end
+//
+DELIMITER ;

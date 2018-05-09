@@ -196,6 +196,10 @@ var b={
 
 /**********************************ROUTES******************************************/
 //index
+
+
+
+
 app.get('/',function (req,res) {
    res.render('index');
 });
@@ -386,10 +390,32 @@ app.post('/wards',function (req,res) {
 
 //patients
 
-app.get('/patients/',function (req,res) {
 
-    res.render('./Patients/view');
+
+app.get('/patients/bill',function (req, res) {
+
+    res.render('./Patients/bill',{mode:1});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// app.get('/patients/',function (req,res) {
+//
+//     res.render('./Patients/view');
+// });
 
 app.get('/patients/new',function (req,res) {
 
@@ -519,11 +545,17 @@ app.post('/login',function (req,res) {
     var type='Select type From Users,WHO Where Users.id=WHO.id AND user like "'+req.body['username']+'" and pass like "'+req.body['password']+'"';
     //console.log(type);
 
+
     var usersRows = [];
     connection.query(type,function (err,result) {
         if (!err) {
+            if(result.length==0)
+            {
+                res.render('error',{data:"Incorrect Login Name or Password"});
+            }
             usersRows = JSON.parse(JSON.stringify(result));
             //console.log(usersRows[0]["type"]);
+
             res.render('./User/panel',{type:usersRows});
         }
         else {
@@ -540,6 +572,12 @@ app.get('/user',function (req,res) {
 
     //res.render('./User/panel',{type:1})
     res.render('./User/panel');
+
+});
+
+
+app.get('*', function(req, res){
+    res.render('error',{data:"The page you're looking for is not found!!"});
 });
 
 app.listen(3000,function () {
