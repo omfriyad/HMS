@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 07, 2018 at 03:19 PM
+-- Generation Time: May 09, 2018 at 12:04 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -135,7 +135,8 @@ INSERT INTO `Addresses` (`addressId`, `street`, `streetName`, `area`, `thana`, `
 (10, '23', '23', 'es', '234', 'wrwr'),
 (11, '23', '23', 'es', '234', 'wrwr'),
 (12, '3', 'adad', 'adsad', 'sdfsdf', 'adad'),
-(13, '23', '23', 'es', '234', 'wrwr');
+(13, '23', '23', 'es', '234', 'wrwr'),
+(14, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -399,28 +400,18 @@ CREATE TABLE `testPros` (
 --
 
 CREATE TABLE `Users` (
-  `user` varchar(20) DEFAULT NULL,
-  `pass` varchar(40) DEFAULT NULL
+  `user` varchar(30) DEFAULT NULL,
+  `pass` varchar(30) DEFAULT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Users`
 --
 
-INSERT INTO `Users` (`user`, `pass`) VALUES
-('suhan', '123'),
-('admin', 'admin'),
-('asd', 'ad'),
-('adad', 'adad'),
-('ad', 'asdad'),
-('ad', 'asdad'),
-('user1', 'pas1'),
-('sir', 'omaa'),
-('reasd', 'acad'),
-('baba', 'tchala'),
-('a', 'a'),
-('add', 'b'),
-('b', 'a');
+INSERT INTO `Users` (`user`, `pass`, `id`) VALUES
+('admin', 'admin', 1),
+('doc1', '12345', 2);
 
 -- --------------------------------------------------------
 
@@ -434,6 +425,27 @@ CREATE TABLE `Wards` (
   `registerId` int(11) NOT NULL,
   `superviserId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `WHO`
+--
+
+CREATE TABLE `WHO` (
+  `id` int(11) NOT NULL,
+  `type` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `WHO`
+--
+
+INSERT INTO `WHO` (`id`, `type`) VALUES
+(1, 'admin'),
+(2, 'doctor'),
+(3, 'nurse'),
+(4, 'patient');
 
 --
 -- Indexes for dumped tables
@@ -545,12 +557,24 @@ ALTER TABLE `testPros`
   ADD KEY `aID` (`aID`);
 
 --
+-- Indexes for table `Users`
+--
+ALTER TABLE `Users`
+  ADD KEY `id` (`id`);
+
+--
 -- Indexes for table `Wards`
 --
 ALTER TABLE `Wards`
   ADD PRIMARY KEY (`wardId`),
   ADD KEY `registerId` (`registerId`),
   ADD KEY `superviserId` (`superviserId`);
+
+--
+-- Indexes for table `WHO`
+--
+ALTER TABLE `WHO`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -560,7 +584,7 @@ ALTER TABLE `Wards`
 -- AUTO_INCREMENT for table `Addresses`
 --
 ALTER TABLE `Addresses`
-  MODIFY `addressId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `addressId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `Advices`
@@ -617,6 +641,12 @@ ALTER TABLE `Wards`
   MODIFY `wardId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `WHO`
+--
+ALTER TABLE `WHO`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -625,7 +655,7 @@ ALTER TABLE `Wards`
 --
 ALTER TABLE `Admitted`
   ADD CONSTRAINT `admitted_ibfk_1` FOREIGN KEY (`patientId`) REFERENCES `Patients` (`patientId`),
-  ADD CONSTRAINT `admitted_ibfk_2` FOREIGN KEY (`bedId`) REFERENCES `Beds` (`bedId`);
+  ADD CONSTRAINT `admitted_ibfk_2` FOREIGN KEY (`bedId`) REFERENCES `Beds` (`bedId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Advices`
@@ -644,8 +674,8 @@ ALTER TABLE `Beds`
 -- Constraints for table `doc_qualifi`
 --
 ALTER TABLE `doc_qualifi`
-  ADD CONSTRAINT `doc_qualifi_ibfk_1` FOREIGN KEY (`doctorId`) REFERENCES `Doctors` (`doctorId`),
-  ADD CONSTRAINT `doc_qualifi_ibfk_2` FOREIGN KEY (`quaId`) REFERENCES `Qualifications` (`quaId`);
+  ADD CONSTRAINT `doc_qualifi_ibfk_1` FOREIGN KEY (`doctorId`) REFERENCES `Doctors` (`doctorId`) ON DELETE CASCADE,
+  ADD CONSTRAINT `doc_qualifi_ibfk_2` FOREIGN KEY (`quaId`) REFERENCES `Qualifications` (`quaId`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `Investigations`
@@ -689,6 +719,12 @@ ALTER TABLE `testAdviced`
 ALTER TABLE `testPros`
   ADD CONSTRAINT `testpros_ibfk_1` FOREIGN KEY (`cId`) REFERENCES `Contacts` (`contactId`),
   ADD CONSTRAINT `testpros_ibfk_2` FOREIGN KEY (`aID`) REFERENCES `Addresses` (`addressId`);
+
+--
+-- Constraints for table `Users`
+--
+ALTER TABLE `Users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`id`) REFERENCES `WHO` (`id`);
 
 --
 -- Constraints for table `Wards`
