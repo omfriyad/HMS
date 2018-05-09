@@ -1,25 +1,25 @@
 <%include ../Extra/Partials/header.ejs%>
 
 <div class="container">
+
     <br>
-    <form action="/patients" method="post">
-        <div>
+    <form action="/patients/new" method="post" >
+        <div class="form-group col-md-9 col-md-offset-2"
             <label for="dateOfAdmission">Date of Admission:</label>
             <input type="date" name="dateOfAdmission">
         </div>
-        <div>
+        <div class="form-group col-md-10 col-md-offset-2">
             <label for="fName">First Name:</label>
-            <input type="text"name="fName">
+            <input type="text" name="fName" required>
             <label for="mName">Middle Name:</label>
-            <input type="text" name="mName">
+            <input type="text" name="mName" required>
             <label for="lName">Last Name:</label>
-            <input type="text" name="lName">
+            <input type="text" name="lName" required>
         </div>
-        <div>
+        <div class="form-group col-md-10 col-md-offset-2">
             <label for="dateOfBirth">Date of Birth:</label>
             <input type="date" name="dateOfBirth">
-        </div>
-        <div>
+            <br>
             <label for="mob1">Mobile1: </label>
             <input type="number" name="mob1">
             <label for="mob2">Mobile2:</label>
@@ -27,24 +27,28 @@
             <label for="email">E-mail:</label>
             <input type="email" name="email">
         </div>
-        <div>
-            <h3>Present Address</h3>
+
+
+        <div class="form-group col-md-9 col-md-offset-2">
+            <br>
+            <label for="pre" class="btn-light">Present Address</label>
+            <br>
             <label for="presSt">Street No./Village: </label>
-            <input type="text" name="presSt">
+            <input type="text" name="presSt" required>
             <label for="presStName">Street Name:</label>
-            <input type="text" name="presStName">
+            <input type="text" name="presStName" required>
             <label for="presArea">Area:</label>
-            <input type="text" name="presArea">
+            <input type="text" name="presArea" required>
             <label for="presThana">Thana:</label>
-            <input type="text" name="presThana">
+            <input type="text" name="presThana" required>
             <label for="presDist">District:</label>
-            <input type="text" name="presDist">
+            <input type="text" name="presDist" required>
 
         </div>
-        <div>
 
-            <h3>Permanent Address</h3>
-            <label for="" class="btn-light">Same as Present</label>
+        <div class="form-group col-md-9 col-md-offset-2">
+
+            <label for="perm" class="btn-light">Permanent Address</label>
             <br>
             <label for="permSt">Street No./Village: </label>
             <input type="text" name="permSt">
@@ -57,8 +61,9 @@
             <label for="permDist">District:</label>
             <input type="text" name="permDist">
         </div>
+
         <br>
-        <div>
+        <div class="form-group col-md-10 col-md-offset-2">
             <label for="profession">Profession</label>
             <select name="profession" id="">
                 <option value="Government job">Government job</option>
@@ -69,25 +74,21 @@
                 <option value="Others">Others</option>
             </select>
         </div>
-        <div>
+        <br>
+        <div class="form-group col-md-9 col-md-offset-2">
             <label for="dipoAmount">Amount Diposited: </label>
             <input type="number" name="depositedAmount">
         </div>
-        <div>
-            <label for="cabin">Cabin/Ward:</label>
-            <input type="text">
-        </div>
 
-        <div>
+        <div class="form-group col-md-4 col-md-offset-3">
             <br><br><br>
             <p>Signature with date</p>
-            <label for="depositorName:"></label>
-            <input type="text" name="depositorName"><br>
-            <label for="depositorsRel">Relation with the Patient</label><br>
+            <label for="depositorName:">Depositor Name</label>
+            <input type="text" name="depositorName">
+            <label for="depositorsRel">Relation with the Patient</label>
             <input type="text" name="depositorsRel">
         </div>
-
-        <input type="submit" class="btn-success">
+        <input type="submit" class="btn-success form-group col-md-2 col-md-offset-5">
     </form>
 
 </div>

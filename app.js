@@ -200,10 +200,6 @@ app.get('/',function (req,res) {
    res.render('index');
 });
 
-
-
-
-
 //doctors
 app.get('/doctors/',function (req,res) {
     res.render('./Doctors/view');
@@ -388,26 +384,27 @@ app.post('/wards',function (req,res) {
 });
 
 
-
-
 //patients
+
+app.get('/patients/',function (req,res) {
+
+    res.render('./Patients/view');
+});
 
 app.get('/patients/new',function (req,res) {
 
-    res.render('./Patients/new',{pid:"1"});
+    res.render('./Patients/new');
 });
 
-app.post('/patients/investigation',function (req,res) {
-    console.log(req.body);
-    res.render('./Patients/investigation');
+app.get('/patients/prescription',function (req,res) {
+
+    res.render('./Patients/prescription');
 });
 
 app.get('/patients/investigation',function (req,res) {
 
     res.render('./Patients/investigation');
 });
-
-
 
 app.get('/patients/pending',function (req, res) {
 
@@ -424,12 +421,58 @@ app.get('/patients/pending',function (req, res) {
 
 });
 
-app.post('/patients',function (req,res) {
 
-    console.log(req.body);
-    //console.log(callPros(req.body));
-    res.redirect('/patients/investigation');
+
+app.post('/patients/new',function (req,res) {
+    //console.log(callProcedure('patientIn',req.body));
+    var usersRows = [];
+    connection.query(callProcedure('patientIn',req.body));
+    /*connection.query(callProcedure('patientIn',req.body),function (err) {
+        if(!err){
+            connection.query("Select * From Patients ORDER BY  patientId DESC LIMIT 1",function (err,result) {
+                if(!err){
+                    usersRows = JSON.parse(JSON.stringify(result));
+                    console.log(usersRows);
+                    res.render('./patients/view',{userRows:usersRows});
+                }else{
+                    console.log('Error while performing view.' + err);
+                }
+            });
+
+        }else{
+            console.log('Error while performing procedure.' + err);
+        }
+
+    });*/
+    connection.query("select a.patientId as 'Patient ID', a.dateOfAdmission as 'Admission Date', CONCAT(a.fName, ' ', a.mName, ' ',a.lName) as 'Name', a.dateOfBirth as 'Birth Date',\n" +
+        "c.mob1 as 'Mobile (1)', c.mob2 as 'Mobile (2)', c.email as 'E-mail', CONCAT(pr.street, ' ', pr.streetName, ' ', pr.area, ' ',pr.thana,' ', pr.district)  as 'Present Address',CONCAT(pe.street, ' ', pe.streetName, ' ', pe.area, ' ',pe.thana,' ', pe.district)  as 'Permenent Address', a.profession as 'Professional', a.amountDeposite as 'Diposited Amount', a.wardId as 'Word No', ad.bedID as 'Bed No', a.depositorName as 'Depositor Name'\n" +
+        "from patients a, contacts c, addresses pr, addresses pe , admitted ad\n" +
+        "where a.contactId = c.contactId and a.presAddress = pr.addressId and a.permAddress = pe.addressId and ad.patientId = a.patientId and a.patientId = (SELECT patientId FROM Patients ORDER BY patientId DESC LIMIT 1)\n" +
+        "\n",function (err,result) {
+        if(!err){
+            //usersRows = JSON.parse(JSON.stringify(result));
+            console.log(result);
+            res.render('./patients/view',{userRows:result[0]});
+        }else{
+            console.log('Error while performing view.' + err);
+        }
+    });
+
 });
+
+app.post('/patients/investigation',function (req,res) {
+    console.log(req.body);
+    res.render('./Patients/investigation');
+});
+
+
+app.post('/patients/prescription',function (req,res) {
+    console.log(req.body);
+    res.redirect('./patients/prescription');
+});
+
+
+
 
 
 //signup

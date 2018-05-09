@@ -2,7 +2,7 @@
 
 <div class="container">
     <br>
-    <form action="/patients" method="post">
+    <form action="/patients/prescription" method="post">
         <!--
         <div>
             <label for="patientId">Patient ID:</label>
@@ -23,58 +23,46 @@
             <input type="date" name="dateOfBirth"  value="" readonly>
         </div>
         -->
-        <label for="personalInfo">Personal Information</label>
+        <label for="medicineAdvice">Medicine Advice</label>
         <div>
-            <label for="height">Height</label>
-            <input type="text "name="height" value="">
-            <label for="weight">Weight</label>
-            <input type="text" name="weight" value="">
-        </div>
-        <div>
-            <label for="symptopms">Sympotoms of the disease</label>
-            1.<input type="text" name="symptopms" value="">
-            2.<input type="text" name="symptopms" value="">
-            3.<input type="text" name="symptopms" value="">
-            <br>
-            4.<input type="text" name="symptopms" value="">
-            5.<input type="text" name="symptopms" value="">
-            6.<input type="text" name="symptopms" value="">
+            <table cellpadding="0" cellspacing="0">
+
+                <tr>
+                    <th><label for="adviceId">Advice Id</label><th>
+                    <th><label for="medicineId">Medicine Id</label><th>
+                    <th><label for="quantity">quantity</label></th>
+                    <th><label for="times">Times In a day</label></th>
+                    <th><label for="beforeAfter">Before/After</label></th>
+                </tr>
+
+                <% for(var i=0;i<5;i++){ %>
+                <tr>
+                    <% for(var j=0;j<5;j++){ %>
+                        <td><input type="text" name=<%="a"+i%> value="j" ></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>
         </div>
 
         <div>
-            <label for="bloodPressure">Blood Pressure:</label>
-            Lower <input type="text "name="bloodPressure" value="">
-            Upper<input type="text" name="bloodPressure" value="">
+            <table cellpadding="0" cellspacing="0">
+                <tr name="t1">
+                    <th><label for="testName">Test Name</label><th>
+                    <th><label for="testCategory">Test Category</label><th>
+                </tr>
+
+                <% for(var i=0;i<5;i++){ %>
+                <tr name="t2">
+                    <% for(var j=0;j<2;j++){ %>
+                    <td><input type="text" name=<%="b"+i%> value="i" ></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>
         </div>
 
-        <div>
-            <br>
-            <label for="game">Game:</label>
-            <br>
-            <input type="checkbox" name="game" value="Football"> 1)Football
-            <br>
-            <input type="checkbox" name="game" value="Hokey"> 2)Hokey
-            <br>
-            <input type="checkbox" name="game" value="Volley Ball"> 3)Volley Ball
-            <br>
-            <input type="checkbox" name="game" value="Cricket"> 4)Cricket
-            <br>
-            <input type="checkbox" name="game" value="Chess"> 5)Chess
-            <br>
-            <input type="checkbox" name="game" value="All"> 6)All
-            <br>
-            <input type="checkbox" name="game" value="None"> 7)None
-        </div>
 
-        <div>
-            <label for="disease">Disease Name</label>
-            <input type="text" name="disease" value="">
-        </div>
-
-        <div>
-            <label for="doctorId">Doctor Id</label>
-            <input type="text" name="doctorId" value="">
-        </div>
 
         <input type="submit" class="btn-success">
     </form>

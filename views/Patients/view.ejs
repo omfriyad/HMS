@@ -1,2 +1,14 @@
 <%include ../Extra/Partials/header.ejs%>
+
+<div class="container">
+    <%Object.keys(userRows).forEach(function (t) { %>
+
+    <label> <%=t%>: </label> <label><%=userRows[t]%></label>
+    <br>
+   <%})%>
+
+</div>
+
+
 <%include ../Extra/Partials/footer.ejs%>
+
