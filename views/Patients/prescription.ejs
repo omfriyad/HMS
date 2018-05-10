@@ -2,7 +2,17 @@
 
 <div class="container">
     <br>
-    <form action="/patients/prescription" method="post">
+    <div class="container">
+        <%Object.keys(userRows).forEach(function (t) { %>
+
+        <label> <%=t%>: </label> <label><%=userRows[t]%></label>
+        <br>
+        <%})%>
+
+    </div >
+<div class="container">
+    <form action="/patients/pres" method="post">
+        <!--<div>-->
         <!--
         <div>
             <label for="patientId">Patient ID:</label>
@@ -37,8 +47,10 @@
 
                 <% for(var i=0;i<5;i++){ %>
                 <tr>
-                    <% for(var j=0;j<5;j++){ %>
-                        <td><input type="text" name=<%="a"+i%> value="j" ></td>
+                    <td><input type="number" name="<%="a"+i%>" value=<%=userRows["adviceId"]%> readonly></td>
+                    <% for(var j=1;j<5;j++){ %>
+
+                        <td><input type="number" name=<%="a"+i%> value="" ></td>
                     <% } %>
                 </tr>
                 <% } %>
@@ -54,8 +66,9 @@
 
                 <% for(var i=0;i<5;i++){ %>
                 <tr name="t2">
-                    <% for(var j=0;j<2;j++){ %>
-                    <td><input type="text" name=<%="b"+i%> value="i" ></td>
+                    <td><input type="number" name="<%="b"+i%>" value=<%=userRows["adviceId"]%> readonly></td>
+                    <% for(var j=1;j<3;j++){ %>
+                    <td><input type="text" name=<%="b"+i%> value="" ></td>
                     <% } %>
                 </tr>
                 <% } %>
@@ -68,6 +81,7 @@
     </form>
 
 </div>
+
 
 
 <%include ../Extra/Partials/footer.ejs%>

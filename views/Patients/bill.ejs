@@ -11,7 +11,45 @@
     <input type="submit">
 </form>
 <%}else{%>
-<h1>else</h1>
+<h3>Doctors Bill</h3>
+
+<%bill['doctorBill'].forEach(function (userRows) { %>
+<div class="container">
+    <%Object.keys(userRows).forEach(function (t) { %>
+
+    <label> <%=t%>: </label> <label><%=userRows[t]%>       </label>
+    <%})%>
+
+</div>
+<% })%>
+
+
+
+<h3>Medicine Bill</h3>
+<%bill['medicineBill'].forEach(function (userRows) { %>
+<div class="container">
+    <%Object.keys(userRows).forEach(function (t) { %>
+
+    <label> <%=t%>: </label> <label><%=userRows[t]%>       </label>
+    <%})%>
+
+</div>
+<% })%>
+
+<h3>Bed Bill</h3>
+<%bill['bedBill'].forEach(function (userRows) { %>
+<div class="container">
+    <%Object.keys(userRows).forEach(function (t) { %>
+
+    <label> <%=t%>: </label> <label><%=userRows[t]%>       </label>
+    <%})%>
+
+</div>
+<% })%>
+
+<h3>total</h3>
+<label for=""> Diposite: <%=bill['depositedAmount']%></label> <label for=""> Total Bill: <%=bill['totalBill']%></label> <label for=""> Due: <%=bill['totalBill'] -bill['depositedAmount']  %></label>
+
 <%}%>
 
 <%include ../Extra/Partials/footer.ejs%>

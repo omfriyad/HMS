@@ -146,6 +146,33 @@ function sqlInsert(tableName,data) {
 
 }
 
+function sqlInsertArray(tableName,data) {
+
+    var sql = "INSERT INTO " + tableName +" VALUES (";
+
+    for(var i = 0; i < data.length; i++)
+    {
+
+        data[i] = String(data[i]);
+        if(Number(data[i]))
+        {
+            sql = sql + " "+data[i]+ returnsComma(i,data.length-1);
+        }
+        else
+        {
+
+            sql = sql + "\""+data[i]+"\"" +returnsComma(i,data.length-1);
+        }
+
+
+    }
+
+    sql = sql + ", null );";
+
+    return sql;
+
+}
+
 function callProcedure(pros,data) {
 
     console.log(data);
@@ -407,51 +434,58 @@ app.get('/patients/bill',function (req, res) {
 });
 
 app.post('/patients/bill',function (req, res) {
-    console.log(req.body);
+    console.log(req.body['patientId']);
     bill['mode'] = 1;
 
-    connection.query("SELECT medicineName, medicineAdviced.quantity, unitePrice, medicineAdviced.quantity*unitePrice as 'total'\n" +
-        "\t\t\t\tFROM Advices, medicineAdviced, Medicines\n" +
-        "   \t\t\t\tWHERE Advices.AdviceId = medicineAdviced.adviceId AND\n" +
-        "    \t\t\tAdvices.patientId = "+req.body['patientId'] +" AND medicineAdviced.medicineId=Medicines.medicineId",function (err,result) {
+    connection.query("SELECT medicineName, medicineAdviced.quantity, unitePrice, medicineAdviced.quantity*unitePrice as 'total' FROM Advices, medicineAdviced, Medicines \n" +
+        "WHERE medicineAdviced.adviceId = Advices.AdviceId AND medicineAdviced.medicineId=Medicines.medicineId AND Advices.patientId = "+ req.body['patientId'],function (err,result) {
         if(!err)
         {
+            console.log('medicineBill' + result);
             bill['medicineBill'] = result;
-        }
+        }//doctor bill
+        connection.query("SELECT Doctors.doctorId, Doctors.fName, adviceId, visitFee FROM Doctors, Advices Where Advices.patientId = "+req.body['patientId']+" and Advices.doctorId = Doctors.doctorId",function (err,result) {
+            if(!err)
+            {
+                bill['doctorBill'] = result;
+
+                connection.query("select beds.bedId, bedRent from beds , Admitted\n" +
+                    "where beds.bedId = Admitted.bedId and Admitted.patientId = "+ req.body['patientId'] ,function (err, result) {
+                    if(!err)
+                    {
+                        bill['bedBill'] = result;
+
+                        connection.query("select amountDeposite from patients where patientId = 13",function (err,result) {
+                            if(!err){
+                                bill['depositedAmount'] = Object.values(result[0])[0];
+
+                                sql(callProcedure('updateTotalBill',req.body));
+
+                                connection.query('select totalBill from Bills where patientId ='+req.body['patientId'],function (err,result) {
+                                    bill['totalBill'] = Object.values(result[0])[0];
+                                    console.log(bill);
+                                    res.render('./Patients/bill',{bill:bill});
+                                    bill['mode'] = 0;
+                                    bill['bedBill'] = null;
+                                    bill['doctorBill'] = null;
+                                    bill['medicineBill'] = null;
+                                    bill['depositedAmount'] = null;
+                                    bill['totalBill'] =null;
+
+                                });
+                            }
+
+                        });
+
+                    }
+
+                });
+
+
+            }
+        });
     });
 
-    connection.query("SELECT Doctors.doctorId, Doctors.fName, adviceId, visitFee FROM Doctors, Advices Where Advices.patientId = "+req.body['patientId']+" and Advices.doctorId = Doctors.doctorId",function (err,result) {
-        if(!err)
-        {
-            bill['doctorBill'] = result;
-        }
-    });
-
-    connection.query("select beds.bedId, bedRent from beds , Admitted\n" +
-        "where beds.bedId = Admitted.bedId and Admitted.patientId = "+ req.body['patientId'] ,function (err, result) {
-        if(!err)
-        {
-            bill['bedBill'] = result;
-        }
-
-    });
-
-    connection.query("select amountDeposite from patients where patientId = 13",function (err,result) {
-       if(!err){
-           bill['depositedAmount'] = Object.values(result[0])[0];
-       }
-
-    });
-
-   sql(callProcedure('updateTotalBill',req.body));
-
-   connection.query('select totalBill from Bills where patientId ='+req.body['patientId'],function (err,result) {
-       bill['totalBill'] = Object.values(result[0])[0];
-       console.log(bill);
-       res.render('./Patients/bill',{bill:bill});
-   });
-
-    bill['mode'] = 0;
 });
 
 
@@ -485,7 +519,8 @@ app.get('/patients/new',function (req,res) {
 
 app.get('/patients/prescription',function (req,res) {
 
-    res.render('./Patients/prescription');
+
+    res.render('./Patients/prescriptionfor');
 });
 
 app.get('/patients/investigation',function (req,res) {
@@ -572,8 +607,49 @@ app.post('/patients/investigation',function (req,res) {
 
 
 app.post('/patients/prescription',function (req,res) {
-    console.log(req.body);
-    res.redirect('./patients/prescription');
+
+
+    connection.query("select a.patientId as 'Patient ID', a.dateOfAdmission as 'Admission Date', CONCAT(a.fName, ' ', a.mName, ' ',a.lName) as 'Name', a.dateOfBirth as 'Birth Date',\n" +
+        "c.mob1 as 'Mobile (1)', c.mob2 as 'Mobile (2)', c.email as 'E-mail', CONCAT(pr.street, ' ', pr.streetName, ' ', pr.area, ' ',pr.thana,' ', pr.district)  as 'Present Address',CONCAT(pe.street, ' ', pe.streetName, ' ', pe.area, ' ',pe.thana,' ', pe.district)  as 'Permenent Address', a.profession as 'Professional', a.amountDeposite as 'Diposited Amount', a.wardId as 'Word No', ad.bedID as 'Bed No', a.depositorName as 'Depositor Name'\n" +
+        "from patients a, contacts c, addresses pr, addresses pe , admitted ad\n" +
+        "where a.contactId = c.contactId and a.presAddress = pr.addressId and a.permAddress = pe.addressId and ad.patientId = a.patientId and a.patientId = " +req.body['patientId'],
+        function (err,result) {
+            if (!err) {
+
+                sql('insert into Advices values (null, '+req.body['doctorId']+","+req.body['patientId']+");");
+
+                connection.query("SELECT AdviceId FROM Advices ORDER BY AdviceId DESC LIMIT 1",function (err, result2) {
+
+                    var adviceId = Object.values(result2[0])[0];
+                    result[0]["adviceId"] = adviceId;
+                    console.log(result[0]);
+                    res.render('./Patients/prescription', {userRows: result[0]});
+
+                });
+
+
+
+
+
+            } else {
+                console.log('Error while performing view.' + err);
+            }
+        }
+    );
+});
+
+app.post('/patients/pres',function (req,res) {
+
+    Object.keys(req.body).forEach(function (t) {
+        console.log(t);
+        if(String(t)[0]==='a') {
+            sql(sqlInsertArray('medicineAdviced', req.body[t]));
+        }
+        else
+        {
+            sql(sqlInsertArray('testAdviced', req.body[t]));
+        }
+    });
 });
 
 

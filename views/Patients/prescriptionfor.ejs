@@ -1,0 +1,12 @@
+<%include ../Extra/Partials/header.ejs%>
+
+
+<form action="/patients/prescription" method="post">
+    <label for="patientId">Patient ID: </label>
+    <input type="number" name="patientId">
+    <label for="doctorId">Doctor ID: </label>
+    <input type="number" name="doctorId">
+    <input type="submit">
+
+</form>
+<%include ../Extra/Partials/footer.ejs%>
