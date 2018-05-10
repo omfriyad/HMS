@@ -258,7 +258,7 @@ app.post('/doctors/new',function (req,res) {
     //console.log(req.body);
     switch(a['count']){
         case 0:
-            getWorkingId('Doctors','doctorId ',a);
+            //getWorkingId('Doctors','doctorId ',a);
             connection.query(callProcedure("doctorIn",req.body),function (err,res) {
                 if(err)
                 {
@@ -349,7 +349,7 @@ app.post('/nurses/new',function (req,res) {
     //console.log(req.body);
     switch(b['count']){
         case 0:
-            getWorkingId('Nurses','nurseId',b);
+            //getWorkingId('Nurses','nurseId',b);
             connection.query(callProcedure("nurseIn",req.body),function (err,res) {
                 if(err)
                 {
@@ -455,7 +455,7 @@ app.post('/patients/bill',function (req, res) {
                     {
                         bill['bedBill'] = result;
 
-                        connection.query("select amountDeposite from patients where patientId = 13",function (err,result) {
+                        connection.query("select amountDeposite from patients where patientId = "+req.body['patientId'],function (err,result) {
                             if(!err){
                                 bill['depositedAmount'] = Object.values(result[0])[0];
 
@@ -518,7 +518,6 @@ app.get('/patients/new',function (req,res) {
 });
 
 app.get('/patients/prescription',function (req,res) {
-
 
     res.render('./Patients/prescriptionfor');
 });
