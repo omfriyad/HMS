@@ -278,6 +278,7 @@
     </div>
     <!-- /.row -->
     <div class="row">
+        <%if (type[0]["type"]=="admin" || type[0]["type"]=="nurse" || type[0]["type"]=="doctor"){%>
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -291,7 +292,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/patients/pending">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -300,6 +301,7 @@
                 </a>
             </div>
         </div>
+        <%}if(type[0]["type"]=="admin" || type[0]["type"]=="nurse" || type[0]["type"]=="doctor"){%>
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-green">
                 <div class="panel-heading">
@@ -313,7 +315,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/patients/prescription">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -322,6 +324,7 @@
                 </a>
             </div>
         </div>
+        <%}if(type[0]["type"]=="admin"){%>
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-red">
                 <div class="panel-heading">
@@ -335,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/medicines/new">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -344,6 +347,7 @@
                 </a>
             </div>
         </div>
+        <%} if(type[0]["type"]=="admin" || type[0]["type"]=="doctor"){%>
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-yellow">
                 <div class="panel-heading">
@@ -366,6 +370,7 @@
                 </a>
             </div>
         </div>
+        <%}%>
     </div>
     <!-- /.row -->
 
